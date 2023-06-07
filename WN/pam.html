@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #181818;
+            color: #fff;
+            font-family: Montserrat, sans-serif;
+        }
+
+        .code {
+            background-color: #292929;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .code pre {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .search-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .search-input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #292929;
+            color: #fff;
+            width: 400px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        .search-button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #ff0080;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: #ff00b3;
+        }
+
+        .neon-text {
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .search-results {
+            margin-top: 20px;
+        }
+
+        .search-result {
+            margin-bottom: 10px;
+        }
+
+        .search-result pre {
+            background-color: #ff0080;
+            color: #fff;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            font-size: 18px;
+            border-radius: 5px;
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            pointer-events: none;
+        }
+
+        .popup.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .success-popup {
+            background-color: #00ff80;
+        }
+
+        .error-popup {
+            background-color: #ff0080;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <input id="searchInput" class="search-input" type="text" placeholder="Введите текст для поиска" />
+        <button class="search-button" onclick="search()">Искать</button>
+    </div>
+
+    <div id="searchResults"></div>
+
+    <div class="code">
+        <pre id="transportList">
+<p class='neon-text'>Транспорт | Лимитированный</p>
+bolide → Truffade Formula
+formul → Truffade Formula
+формул → Truffade Formula
+туатара → Declasse Tuatara
+Tuatara → Declasse Tuatara
+валькирия → Dewbauchee Vanguard
+Valkyrie → Dewbauchee Vanguard
+Vanguard → Dewbauchee Vanguard
+вангуард → Dewbauchee Vanguard
+проджван → Benefactor-ASG P-One
+Projone → Benefactor-ASG P-One
+пван → Benefactor-ASG P-One
+Pone → Benefactor-ASG P-One
+ф80 → Grotti R80
+f80 → Grotti R80
+r80 → Grotti R80
+р80 → Grotti R80
+лявутер → Truffade Loveiture
+lavoiture → Truffade Loveiture
+лавутер → Truffade Loveiture
+loveitur → Truffade Loveiture
+венено → Pegassi Verano
+veneno → Pegassi Verano
+верано → Pegassi Verano
+verano → Pegassi Verano
+цлк → Mercedes-Benz CLK
+ниссан50 → Annis GS-R50
+nissan50 → Annis GS-R50
+annis50 → Annis GS-R50
+аннис50 → Annis GS-R50
+g900 → Bardus J900
+j900 → Bardus J900
+г900 → Bardus J900
+sf90 → Grotti SP90
+сф90 → Grotti SP90
+sp90 → Grotti SP90
+сп90 → Grotti SP90
+имола → Pegassi Emola
+Imola → Pegassi Emola
+емола → Pegassi Emola
+emola → Pegassi Emola
+Зонда → Pagassi Zonta
+Zonda → Pagassi Zonta
+Зонта → Pagassi Zonta
+Zonta → Pagassi Zonta
+чентодиечи → Truffade Decicent
+Centodieci → Truffade Decicent
+децицен → Truffade Decicent
+decicen → Truffade Decicent
+зенво → Vysser TSR
+Zenvo → Vysser TSR
+вуссер → Vysser TSR
+Vysser → Vysser TSR
+        </pre>
+    </div>
+
+    <div id="successPopup" class="popup"></div>
+    <div id="errorPopup" class="popup"></div>
+
+    <script>
+        function search() {
+            var input = document.getElementById("searchInput");
+            var searchText = input.value.toLowerCase();
+            var resultsContainer = document.getElementById("searchResults");
+            var results = "";
+            var matches = 0;
+
+            var lines = document.getElementById("transportList").textContent.split("\n");
+            lines.forEach(function(line) {
+                if (line.toLowerCase().includes(searchText)) {
+                    var markedLine = line.replace(new RegExp(searchText, "gi"), function(match) {
+                        return "<mark>" + match + "</mark>";
+                    });
+                    results += "<div class='search-result'><pre>" + markedLine + "</pre></div>";
+                    matches++;
+                }
+            });
+
+            if (results !== "") {
+                resultsContainer.innerHTML = results;
+                showSuccessPopup("Найдено совпадений: " + matches);
+            } else {
+                showErrorPopup("Совпадений не найдено.");
+            }
+        }
+
+        function showSuccessPopup(message) {
+            var popup = document.getElementById("successPopup");
+            popup.innerHTML = message;
+            popup.classList.add("active");
+            setTimeout(function() {
+                popup.classList.remove("active");
+            }, 2000);
+        }
+
+        function showErrorPopup(message) {
+            var popup = document.getElementById("errorPopup");
+            popup.innerHTML = message;
+            popup.classList.add("active");
+            setTimeout(function() {
+                popup.classList.remove("active");
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
