@@ -1,249 +1,545 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <style>
-        body {
-            background-color: #181818;
-            color: #fff;
-            font-family: Montserrat, sans-serif;
-        }
+ <!-- Подключение Font Awesome -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-        .code {
-            background-color: #292929;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
+ <style>
+  body {
+ background-color: #181818;
+ color: #fff;
+ font-family: Montserrat, sans-serif;
+  }
 
-        .code pre {
-            font-size: 14px;
-            line-height: 1.5;
-        }
+  .code {
+ background-color: #292929;
+ padding: 10px;
+ border-radius: 5px;
+ margin-bottom: 20px;
+  }
 
-        .search-container {
-            margin-bottom: 20px;
-            text-align: center;
-        }
+  .scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff0080;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+  }
 
-        .search-input {
-            padding: 10px;
-            border-radius: 5px;
-            border: none;
-            background-color: #292929;
-            color: #fff;
-            width: 400px;
-            font-size: 16px;
-            margin-right: 10px;
-        }
+  .code pre {
+ font-size: 14px;
+ line-height: 1.5;
+  }
 
-        .search-button {
-            padding: 10px 20px;
-            border-radius: 5px;
-            border: none;
-            background-color: #ff0080;
-            color: #fff;
-            font-size: 16px;
-            cursor: pointer;
-        }
+  .search-container {
+ margin-bottom: 20px;
+ text-align: center;
+  }
 
-        .search-button:hover {
-            background-color: #ff00b3;
-        }
+  .search-input {
+ padding: 10px;
+ border-radius: 5px;
+ border: none;
+ background-color: #292929;
+ color: #fff;
+ width: 400px;
+ font-size: 16px;
+ margin-right: 10px;
+  }
 
-        .neon-text {
-            color: #fff;
-            font-size: 18px;
-            font-weight: bold;
-        }
+  .search-button {
+ padding: 10px 20px;
+ border-radius: 5px;
+ border: none;
+ background-color: #ff0080;
+ color: #fff;
+ font-size: 16px;
+ cursor: pointer;
+  }
 
-        .search-results {
-            margin-top: 20px;
-        }
+  .fast-button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
 
-        .search-result {
-            margin-bottom: 10px;
-        }
+  .fast-button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #ff0080;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
 
-        .search-result pre {
-            background-color: #ff0080;
-            color: #fff;
-            padding: 5px;
-            border-radius: 3px;
-        }
+  .search-button:hover {
+ background-color: #ff00b3;
+  }
 
-        .popup {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            font-size: 18px;
-            border-radius: 5px;
-            z-index: 999;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            pointer-events: none;
-        }
+  .neon-text {
+ color: #ffffff; /* Изменим цвет текста на розовый */
+ font-size: 18px;
+ font-weight: bold;
+ padding: 0px 0px;
+ border-radius: 0px;
+ text-align: center;
+ margin: 0; /* Убираем вертикальный отступ */
+  }
 
-        .popup.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
+  .neon1-text {
+ color: #ffffff;
+ font-size: 15px;
+ font-weight: Bold;
+ padding: 0px 0px;
+ border-radius: 0px;
+ text-align: center;
+ line-height: 0;
+ margin: 0;
+  }
 
-        .success-popup {
-            background-color: #00ff80;
-        }
+  .neon5-text {
+ color: #ffffff;
+ font-size: 20px;
+ font-weight: Bold;
+ padding-top: 1px; 
+ padding: 1px; 
+ border-radius: 0px;
+ text-align: center;
+ margin: 0;
+  }
 
-        .error-popup {
-            background-color: #ff0080;
-        }
-    </style>
+  .neon2-text {
+ color: #ffffff; /* Изменим цвет текста на розовый */
+ font-size: 14px;
+ font-weight: Bold;
+ padding: -5px 0px;
+ border-radius: 0px;
+ margin: 0; /* Убираем вертикальный отступ */
+  }
+
+  .neonlimit-text {
+ color: #ffffff; /* Изменим цвет текста на розовый */
+ font-size: 14px;
+ font-weight: Bold;
+ padding: -5px 0px;
+ border-radius: 0px;
+ margin: 0; /* Убираем вертикальный отступ */
+  }
+
+  .neonvnedor-text {
+ color: #ffffff; /* Изменим цвет текста на розовый */
+ font-size: 14px;
+ font-weight: Bold;
+ padding: -5px 0px;
+ border-radius: 0px;
+ margin: 0; /* Убираем вертикальный отступ */
+  }
+  .neonmotiki-text {
+ color: #ffffff; /* Изменим цвет текста на розовый */
+ font-size: 14px;
+ font-weight: Bold;
+ padding: -5px 0px;
+ border-radius: 0px;
+ margin: 0; /* Убираем вертикальный отступ */
+  }
+
+  .search-results {
+ margin-top: 20px;
+  }
+
+  .search-result {
+ margin-bottom: 10px;
+  }
+
+  .search-result pre {
+ background-color: #ff0080;
+ color: #fff;
+ padding: 5px;
+ border-radius: 3px;
+  }
+
+  .popup {
+ position: fixed;
+ bottom: 20px; /* Расположение уведомления снизу */
+ left: 50%;
+ transform: translateX(-50%);
+ padding: 20px;
+ background-color: rgba(0, 0, 0, 0.8);
+ color: #fff;
+ font-size: 18px;
+ border-radius: 5px;
+ z-index: 999;
+ opacity: 0;
+ transition: opacity 0.3s ease-in-out;
+ pointer-events: none;
+  }
+
+  .popup.active {
+ opacity: 1;
+ pointer-events: auto;
+  }
+
+  .success-popup {
+  }
+
+  .error-popup {
+  }
+
+  /* Добавляем анимацию "Spin" к иконкам */
+  .neon-text i {
+ animation: spin 2s infinite;
+  }
+
+  /* Ключевые кадры анимации "Spin" */
+  @keyframes spin {
+ 0% {
+  transform: rotate(0deg);
+ }
+ 100% {
+  transform: rotate(360deg);
+ }
+  }
+
+  /* Анимация для полоски прогресса */
+  @keyframes progress-bar {
+ 0% {
+  width: 100%;
+ }
+ 100% {
+  width: 0;
+ }
+  }
+  .popup-progress-bar {
+ width: 100%;
+ height: 2px;
+ background-color: #ff0080;
+ border-radius: 5px;
+ animation: progress-bar 1.5s linear;
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ right: 0;
+  }
+ </style>
 </head>
 <body>
-    <div class="search-container">
-        <input id="searchInput" class="search-input" type="text" placeholder="Введите текст для поиска" />
-        <button class="search-button" onclick="search()">Искать</button>
-    </div>
 
-    <div id="searchResults"></div>
+<body>
+ <!-- Your existing HTML code ... -->
 
-    <div class="code">
-        <pre id="transportList">
-<p class='neon-text'>Транспорт | Лимитированный</p>
-аполло → Apollo Intensa Emozione
-Apollo → Apollo Intensa Emozione
-мансори → Audi RS6 Mansory
-mansory → Audi RS6 Mansory
-муллинер → Bentley Mulliner
-mulliner → Bentley Mulliner
-цсл → Ubermacht CSL
-csl → Ubermacht CSL
-g900 → Bardus J900
-j900 → Bardus J900
-г900 → Bardus J900
-brabgt → Bardus GT63
-брабгт → Bardus GT63
-brabgt → Bardus GT63
-bardgt → Bardus GT63
-бардгт → Bardus GT63
-атлантик → Truffade Pacific
-atlantic → Truffade Pacific
-pacific → Truffade Pacific
-пасифик → Truffade Pacific
-bolide → Truffade Formula
-formul → Truffade Formula
-формул → Truffade Formula
-chiron → Truffade Shiron
-shiron → Truffade Shiron
-чирон → Truffade Shiron
-широн → Truffade Shiron
-лявутер → Truffade Loveiture
-lavoiture → Truffade Loveiture
-лавутер → Truffade Loveiture
-loveitur → Truffade Loveiture
-чентодиечи → Truffade Decicent
-Centodieci → ruffade Decicent
-децицен → Truffade Decicent
-decicen → Truffade Decicent
-финир → Fenyr SuperSport
-fenyr → Fenyr SuperSport
-ф80 → Grotti R80
-f80 → Grotti R80
-r80 → Grotti R80
-р80 → Grotti R80
-sf90 → Grotti SP90
-сф90 → Grotti SP90
-sp90 → Grotti SP90
-сп90 → Grotti SP90
-веном → Hennessey Venom
-venom → Hennessey Venom
+ <!-- Scroll to Top Button -->
+ <div class="scroll-to-top" onclick="scrollToTop()">
+   <i class="fas fa-arrow-up"></i>
+ </div>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+ <script>
+  // Function to scroll to the top of the page
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  // Your other JavaScript functions ...
+
+ </script>
+</body>
+
+ <div class="search-container">
+  <input id="searchInput" class="search-input" type="text" placeholder="Введите текст для поиска" />
+  <button class="search-button" onclick="search()">Искать</button>
+ </div>
+
+ <div id="searchResults"></div>
+
+ <div class="code">
+  <pre id="transportList">
+ <!-- Используем Font Awesome иконку для автомобиля -->
+ <p class='neon1-text'><i class="fas fa-info-circle"></i> Формат: Кодовое слово → замена слова</p>
+ <p class='neon5-text'> Быстрые кнопки</p>
+ <div class="fast-button-container">
+ <button class="fast-button" onclick="scrollToLimitir()"><i class="fas fa-arrow-down"></i> Транспорт: Лимитированные</button>
+ <button class="fast-button" onclick="scrollToOffroad()"><i class="fas fa-arrow-down"></i> Транспорт: Внедорожники</button>
+ <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Мотоциклы</button>
+ <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Эксклюзивные</button>
+ <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Коммерческий</button>
+ <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Комфорт</button>
+ <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Премиум</button>
+ <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Ретро и Маслкары</button>
+ <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Акционные</button>
+ <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Эконом</button>
+ <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Самолеты</button>
+ <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Вертолеты</button>
+ <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Лодки</button>
+ <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Комплекты и детали</button>
+
+ <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Ресурсы и урожай</button>
+ <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Стоимости</button>
+ <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Инструменты</button>
+ <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Одежда и бренды</button>
+ <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Обмен</button>
+ <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Рыбалка</button>
+ <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Дайвинг</button>
+ <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Туристические объекты</button>
+ <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Города и районы</button>
+ <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Недвижимость и бизнесы +(г.м, подвалы т.п)</button>
+</div>
+ <p class='neon-text'><i class="fas fa-car"></i> Транспорт</p>
+ <p class='neonlimit-text'><i class="fas fa-car"></i> Лимитированные</p>
+ макф1 → Progen D1
+ mcf1 → Progen D1
+ прогф1 → Progen D1
+ progf1 → Progen D1
+ атлантик → Truffade Pacific
+ atlantic → Truffade Pacific
+ pacific → Truffade Pacific
+ пасифик → Truffade Pacific
+ мансори → Audi RS6 Mansory
+ mansory → Audi RS6 Mansory
+ финир → Fenyr SuperSport
+ fenyr → Fenyr SuperSport
+ хенесси → Henessey Venom
+ Henessey → Henessey Venom
+ brabgt → Bardus GT63
+ брабгт → Bardus GT63
+ brabgt → Bardus GT63
+ bardgt → Bardus GT63
+ бардгт → Bardus GT63
+ keyv63 → Keyvany G63
+ кейв63 → Keyvany G63
+ аполло → Apollo Intensa Emozione
+ Apollo → Apollo Intensa Emozione
+ манхарт → Manhart MH5 GTR
+ Manhart → Manhart MH5 GTR
+ болид → Truffade Formula
+ bolide → Truffade Formula
+ formul → Truffade Formula
+ формул → Truffade Formula
+ туатара → Declasse Tuatara
+ Tuatara → Declasse Tuatara
+ валькирия → Dewbauchee Vanguard
+ Valkyrie → Dewbauchee Vanguard
+ Vanguard → Dewbauchee Vanguard
+ вангуард → Dewbauchee Vanguard
+ проджван → Benefactor-ASG P-One
+ Projone → Benefactor-ASG P-One
+ пван → Benefactor-ASG P-One
+ Pone → Benefactor-ASG P-One
+ ф80 → Grotti R80
+ f80 → Grotti R80
+ r80 → Grotti R80
+ р80 → Grotti R80
+ лявутер → Truffade Loveiture
+ lavoiture → Truffade Loveiture
+ лавутер → Truffade Loveiture
+ loveitur → Truffade Loveiture
+ лотус → Lotus Evija
+ lotus → Lotus Evija
+ венено → Pegassi Verano
+ veneno → Pegassi Verano
+ верано → Pegassi Verano
+ verano → Pegassi Verano
+ цлк → Mercedes-Benz CLK
+ clk → Mercedes-Benz CLK
+ ниссан50 → Annis GS-R50
+ nissan50 → Annis GS-R50
+ annis50 → Annis GS-R50
+ аннис50 → Annis GS-R50
+ g900 → Bardus J900
+ j900 → Bardus J900
+ г900 → Bardus J900
+ sf90 → Grotti SP90
+ сф90 → Grotti SP90
+ sp90 → Grotti SP90
+ сп90 → Grotti SP90
+ имола → Pegassi Emola
+ Imola → Pegassi Emola
+ емола → Pegassi Emola
+ emola → Pegassi Emola
+ Зонда → Pegassi Zonta
+ Zonda → Pegassi Zonta
+ Зонта → Pegassi Zonta
+ Zonta → Pegassi Zonta
+ веном → Hennessey Venom
+ venom → Hennessey Venom
+ чентодиечи → Truffade Decicent
+ Centodieci → Truffade Decicent
+ децицен → Truffade Decicent
+ decicen → Truffade Decicent
+ зенво → Vysser TSR
+ Zenvo → Vysser TSR
+ вуссер → Vysser TSR
+ Vysser → Vysser TSR
+ кавасаки → Nagasaki Shinobi H2R
+ ниндзя → Nagasaki Shinobi H2R
+ h2r → Nagasaki Shinobi H2R
+ х2р → Nagasaki Shinobi H2R
+ шиноби → Nagasaki Shinobi H2R
+ сп38 → Grotti SR38
+ sp38 → Grotti SR38
+ ср38 → Grotti SR38
+ sr38 → Grotti SR38
+ j50 → Grotti J50
+ г50 → Grotti J50
+ вулкан → Dewbauchee Vulcore
+ vulcan → Dewbauchee Vulcore
+ вулкор → Dewbauchee Vulcore
+ vulcore → Dewbauchee Vulcore
+ десмоседичи → Principe Desmood
+ desmosedici → Principe Desmood
+ десмуд → Principe Desmood
+ desmood → Principe Desmood
+ ktm → Principe GTX
+ ктм → Principe GTX
+ гтх → Principe GTX
+ gtx → Principe GTX
+ атс → Grotti ATS
+ ats → Grotti ATS
+ <p class='neonvnedor-text'><i class="fas fa-truck-monster"></i> Внедорожники</p>
+буррито → Burrito
+бурито → Burrito
+каракара → Caracara 4x4
+хеллион → Hellion
+патриот → Patriot
+спидэ → Speedo Express
+спидо → Speedo
+юга → Youga
+югк → Youga Classic
+баллер → Baller
+бифта → Bifta
+десерт → Desert Raid
+трофи → Пикап трофи
+бизон → Bison
+бобкэт → Bobcat XL
+бодхи → Bodhi
+кавалкад → Cavalcade
+дубста → Dubsta
+эверон → Everon
+фрикравлер → Freecrawler
+грангер → Granger
+гресли → Gresley
+хантли → Huntley S
+камачо → Kamacho
+лендсталкер → Landstalker
+меса → Mesa
+новак → Novak
+ренчер → Rancher XL
+ребла → Rebla GTS
+рокото → Rocoto
+садлер → Sadler
+семиноль → Seminole Frontier
+торос → Toros
+xls → XLS
+хлс → XLS
+палисад → Bollokan Palisade
+palisade → Bollokan Palisade
+tundra → Karin Thunder
+тундра → Karin Thunder
+тундер → Karin Thunder
+thund → Karin Thunder
+
+<p class='neonmotiki-text'><i class="fas fa-motorcycle"></i> Мотоциклы</p>
+дукати → Ducati Panigale R
+хакучо → Hakuchou
+вортекс → Vortex
+u1000 → Ubermacht 1000R
+у1000 → Ubermacht 1000R
+с1000 → Ubermacht 1000R
+s1000 → Ubermacht 1000R
 rc213 → Honda RC213V
 рц213 → Honda RC213V
-keyv63 → Keyvany G63
-кейв63 → Keyvany G63
-венено → Pegassi Verano
-veneno → Pegassi Verano
-верано → Pegassi Verano
-verano → Pegassi Verano
-лотус → Lotus Evija
-lotus → Lotus Evija
-манхарт → Manhart MH5 GTR
-Manhart → Manhart MH5 GTR
-макф1 → Progen D1
-mcf1 → Progen D1
-прогф1 → Progen D1
-progf1 → Progen D1
-проджван → Benefactor-ASG P-One
-Projone → Benefactor-ASG P-One
-пван → Benefactor-ASG P-One
-Pone → Benefactor-ASG P-One
-цлк → Mercedes-Benz CLK
-clk → Mercedes-Benz CLK
+аккорд → Dinka Paccord
+accord → Dinka Paccord
+паккорд → Dinka Paccord
+paccord → Dinka Paccord
+альтима → Annis Ultima
+altima → Annis Ultima
+ultima → Annis Ultima
+акума → Akuma
+баггер → Bagger
+бати → Bati 801
+карбон → Carbon RS
+клиффхангер → Cliffhanger
+демон → Deamon
+дефилер → Defiler
+диаболус → Diabolus
+даблт → Double-T
+ендуро → Enduro
+эскей → Esskey
+фиггио → Faggio
+фср → FCR 1000
+лектро → Lectro
+немесис → Nemesis
+псж600 → PCJ 600
+руффиан → Ruffian
+стритб → Street Blazer
+труст → Thrust
+вейдер → Vader
+
+<p class='neon2-text'><i class="fas fa-motorcycle"></i> Эксклюзивные</p>
+ае86 → Karin Brueno AE86
+ae86 → Karin Brueno AE86
+е36 → Ubermacht E36
+e36 → Ubermacht E36
+190e → Benefactor 190e  `A$AP
+190е → Benefactor 190e  `A$AP
+e46 → Ubermacht E46`MW
+е46 → Ubermacht E46`MW
 w124 → Mercedes-Benz E500 W124
 волчок → Mercedes-Benz E500 W124
 в124 → Mercedes-Benz E500 W124
-ниссан50 → Annis GS-R50
-nissan50 → Annis GS-R50
-annis50 → Annis GS-R50
-аннис50 → Annis GS-R50
-имола → Pegassi Emola
-Imola → Pegassi Emola
-емола → Pegassi Emola
-emola → Pegassi Emola
-Зонда → Pegassi Zonta
-Zonda → Pegassi Zonta
-Зонта → Pegassi Zonta
-Zonta → Pegassi Zonta
-туатара → Declasse Tuatara
-Tuatara → Declasse Tuatara
-зенво → Vysser TSR
-Zenvo → Vysser TSR
-вуссер → Vysser TSR
-Vysser → Vysser TSR
-
-<p class='neon-text'>Транспорт | Акционный</p>
-м4 → Ubermacht M4
-m4 → Ubermacht M4
-е60 → Ubermacht W5 E60
-e60 → Ubermacht W5 E60
-divo → Bugatti Divo
-диво → Bugatti Divo
-дастер → Maibatsu Duster
-duster → Maibatsu Duster
-flash → Flash GT
-флеш → Flash GT
-инфернус → Infernus 'SA
-исси → Issi
-с63 → Mercedes Benz C63
-c63 → Mercedes Benz C63
-оутлендер → Maibatsu Outcruise
-аутлендер → Maibatsu Outcruise
-outlander → Maibatsu Outcruise
-outcruise → Maibatsu Outcruise
-оуткруз → Maibatsu Outcruise
-ауткруз → Maibatsu Outcruise
-панто → Panto
-camry → Karin Camria
-camri → Karin Camria
-камри → Karin Camria
-рав4 → Karin RAW4
-rav4 → Karin RAW4
-raw4 → Karin RAW4
-
-<p class='neon-text'>Транспорт | Эксклюзив</p>
-хаммер → Mammoth N1
-hummer → Mammoth N1
-мамонт → Mammoth N1
+лп800 → Pegassi Coutron LPI 800-4
+lp800 → Pegassi Coutron LPI 800-4
+гемера → Overflod Genera
+gemera → Overflod Genera
+генера → Overflod Genera
+genera → Overflod Genera
+грантуризмо → Lampadati GranTurismo
+GranTurismo → Lampadati GranTurismo
+монза → Ferrari Monza
+monza → Ferrari Monza
+ar8 → Obey R8
+ар8 → Obey R8
+боатт → Rolls-Royce Boattail
+Boatt → Rolls-Royce Boattail
+декласс → Declasse Vigout
+Declasse → Declasse Vigout
+оутлав → Nagasaki Outlaw
+Outlaw → Nagasaki Outlaw
+цлс → Benefactor ZLS63
+банан → Benefactor ZLS63
+cls → Benefactor ZLS63
+zls → Benefactor ZLS63
+злс → Benefactor ZLS63
+бмвих → Ubermacht IY
+bmwix → Ubermacht IY
+убих → Ubermacht IY
+ubix → Ubermacht IY
+rx7 → Annis PX7
+рх7 → Annis PX7
+супра → Karin Superia
+supra → Karin Superia
+суперия → Karin Superia
+superia → Karin Superia
+марк2 → Karin Marco II
+mark2 → Karin Marco II
+лц500 → Emperor MC500
+lc500 → Emperor MC500
+мц500 → Emperor MC500
+mc500 → Emperor MC500
 астон → Dewbauchee Voyage
 aston → Dewbauchee Voyage
 вояж → Dewbauchee Voyage
 voyage → Dewbauchee Voyage
-етрон → Obey I-tron
-etron → Obey I-tron
-itron → Obey I-tron
-итрон → Obey I-tron
 rs6 → Obey PS6
 рс6 → Obey PS6
 rs7 → Obey PS7
@@ -252,6 +548,10 @@ ps6 → Obey PS6
 пс6 → Obey PS6
 ps7 → Obey PS7
 пс7 → Obey PS7
+етрон → Obey I-tron
+etron → Obey I-tron
+itron → Obey I-tron
+итрон → Obey I-tron
 bentayga → Enus Benteygo
 бентайга → Enus Benteygo
 bentaygo → Enus Benteygo
@@ -264,55 +564,44 @@ b750 → Ubermacht 750
 б750 → Ubermacht 750
 u750 → Ubermacht 750
 у750 → Ubermacht 750
-цсл → Ubermacht CSL
-csl → Ubermacht CSL
-е36 → Ubermacht E36
-e36 → Ubermacht E36
-e46 → Ubermacht E46`MW
-е46 → Ubermacht E46`MW
-бмвих → Ubermacht IY
-bmwix → Ubermacht IY
-убих → Ubermacht IY
-ubix → Ubermacht IY
-f90 → Ubermacht W5 F90
-ф90 → Ubermacht W5 F90
 m8 → Ubermacht W8 Contention
 м8 → Ubermacht W8 Contention
 w8 → Ubermacht W8 Contention
 в8 → Ubermacht W8 Contention
-х5м → Ubermacht Y5W
-x5m → Ubermacht Y5W
-y5м → Ubermacht Y5W
-у5m → Ubermacht Y5W
-х7 → Ubermacht Y7
-x7 → Ubermacht Y7
-y7 → Ubermacht Y7
-у7 → Ubermacht Y7
+:R:фх50 → Fathom XF50
+:R:fx50 → Fathom XF50
+:R:xf50 → Fathom XF50
+:R:хф50 → Fathom XF50
+:R:х5м → Ubermacht Y5W
+:R:x5m → Ubermacht Y5W
+:R:y5м → Ubermacht Y5W
+:R:у5m → Ubermacht Y5W
+:R:х7 → Ubermacht Y7
+:R:x7 → Ubermacht Y7
+:R:y7 → Ubermacht Y7
+:R:у7 → Ubermacht Y7
 chall → Bravado Contender
 челл → Bravado Contender
 чалл → Bravado Contender
 контрен → Bravado Contender
 conten → Bravado Contender
+чарж → Bravado Changer LD
+Сhar → Bravado Changer LD
+чанж → Bravado Changer LD
+chang → Bravado Changer LD
 рам → Bravado RUM
 ram → Bravado RUM
 rum → Bravado RUM
 рум → Bravado RUM
-f488 → Grotti 884 Pizta
-ф488 → Grotti 884 Pizta
-g488 → Grotti 884 Pizta
-г488 → Grotti 884 Pizta
+бравлер → Brawler
 f812 → Grotti 821
 ф812 → Grotti 821
 g812 → Grotti 821
 г812 → Grotti 821
-raptor → Vapid Predator
-раптор → Vapid Predator
-predat → Vapid Predator
-предатор → Vapid Predator
-нсх → Dinka NSY
-nsx → Dinka NSY
-sny → Dinka NSY
-нсу → Dinka NSY
+f488 → Grotti 884 Pizta
+ф488 → Grotti 884 Pizta
+g488 → Grotti 884 Pizta
+г488 → Grotti 884 Pizta
 фтайп → Ocelot F-Model
 ftype → Ocelot F-Model
 фмодел → Ocelot F-Model
@@ -321,16 +610,31 @@ fmodel → Ocelot F-Model
 Cherokee → Canis Great Cherokee
 вранглер → Canis Wrangler
 wrangler → Canis Wrangler
-гемера → Overflod Genera
-gemera → Overflod Genera
-генера → Overflod Genera
-genera → Overflod Genera
+тахо → Declasse Takho
+tahoe → Declasse Takho
+takho → Declasse Takho
+эксплорер → Vapid Endurance
+Explorer → Vapid Endurance
+эндур → Vapid Endurance
+Endur → Vapid Endurance
+виктория → Vapid King
+Victoria → Vapid King
+вкинг → Vapid King
+vking → Vapid King
+таурус → Vapid Bull
+Taurus → Vapid Bull
+vbull → Vapid Bull
+vbull → Vapid Bull
+raptor → Vapid Predator
+раптор → Vapid Predator
+predat → Vapid Predator
+предатор → Vapid Predator
+нсх → Dinka NSY
+nsx → Dinka NSY
+sny → Dinka NSY
+нсу → Dinka NSY
 avent → Pegassi Avendore SVJ
 авент → Pegassi Avendore SVJ
-лп400 → Pegassi Coutron LP-400
-lp400 → Pegassi Coutron LP-400
-лп800 → Pegassi Coutron LPI 800-4
-lp800 → Pegassi Coutron LPI 800-4
 huracan → Pegassi Hurricane
 хуракан → Pegassi Hurricane
 hurric → Pegassi Hurricane
@@ -339,63 +643,30 @@ urus → Pegassi Ursus
 урус → Pegassi Ursus
 ursus → Pegassi Ursus
 урсус → Pegassi Ursus
-ic300 → Emperor IC300
-is300 → Emperor IC300
-ис300 → Emperor IC300
-лц500 → Emperor MC500
-lc500 → Emperor MC500
-мц500 → Emperor MC500
-mc500 → Emperor MC500
 лх570 → Emperor MX570
 lx570 → Emperor MX570
 мх570 → Emperor MX570
 mx570 → Emperor MX570
-грантуризмо → Lampadati GranTurismo
-GranTurismo → Lampadati GranTurismo
-миата → Annis Myata
-miata → Annis Myata
-myata → Annis Myata
-rx7 → Annis PX7
-рх7 → Annis PX7
-mclaren → Progen 720c
-макларен → Progen 720c
-720c → Progen 720c
-720с → Progen 720c
+ic300 → Emperor IC300
+is300 → Emperor IC300
+ис300 → Emperor IC300
+e63 → Benefactor E63
+е63 → Benefactor E63
 g63 → Benefactor J63 ASG
 гелик → Benefactor J63 ASG
 г63 → Benefactor J63 ASG
 j63 → Benefactor J63 ASG
-вито → Benefactor Veto 250
-vito → Benefactor Veto 250
-вето → Benefactor Veto 250
-veto → Benefactor Veto 250
-190e → Benefactor 190e  `A$AP
-190е → Benefactor 190e  `A$AP
-цлс → Benefactor ZLS63
-банан → Benefactor ZLS63
-cls → Benefactor ZLS63
-zls → Benefactor ZLS63
-злс → Benefactor ZLS63
-e63 → Benefactor E63
-е63 → Benefactor E63
-г66 → Benefactor J 6x6
-g66 → Benefactor J 6x6
-j66 → Benefactor J 6x6
-глс63 → Benefactor JLS63
-gls → Benefactor JLS63
-глс → Benefactor JLS63
-jls → Benefactor JLS63
 gt63 → Benefactor JT63 ASG
 jt63 → Benefactor JT63 ASG
 гт63 → Benefactor JT63 ASG
 акула → Benefactor JT63 ASG
-гтс → Benefactor JTs
-gts → Benefactor JTs
-jts → Benefactor JTs
 s500 → Benefactor S500
 с500 → Benefactor S500
 lancer → Maibatsu Lance
 лансер → Maibatsu Lance
+миата → Annis Myata
+miata → Annis Myata
+myata → Annis Myata
 180sx → Annis 180SX
 180сх → Annis 180SX
 370x → Annis 370x
@@ -412,12 +683,8 @@ gs33r → Annis GS-R M33
 gt34r → Annis GS-R M34
 гс34р → Annis GS-R M34
 gs34r → Annis GS-R M34
-silvia → Annis Slivia S15
-сильвия → Annis Slivia S15
-сильвиа → Annis Slivia S15
-slivia → Annis Slivia S15
-сливия → Annis Slivia S15
-сливиа → Annis Slivia S15
+f90 → Ubermacht W5 F90
+ф90 → Ubermacht W5 F90
 p911 → Pfister 811 Turbo S
 порш911 → Pfister 811 Turbo S
 п911 → Pfister 811 Turbo S
@@ -432,27 +699,41 @@ Panamera → Pfister Paramena
 панамера → Pfister Paramena
 Paramena → Pfister Paramena
 парамена → Pfister Paramena
-тайкан → Pfister Teycan
-taycan → Pfister Teycan
-тейкан → Pfister Teycan
-teycan → Pfister Teycan
+хаммер → Mammoth N1
+hummer → Mammoth N1
+мамонт → Mammoth N1
+гтс → Benefactor JTs
+gts → Benefactor JTs
+jts → Benefactor JTs
+г66 → Benefactor J 6x6
+g66 → Benefactor J 6x6
+j66 → Benefactor J 6x6
 cullinan → Enus Callinon
 кулинан → Enus Callinon
 callinon → Enus Callinon
 калинон → Enus Callinon
 каллинон → Enus Callinon
-ровер → Gallivanter Range Rider
-rover → Gallivanter Range Rider
-райдер → Gallivanter Range Rider
-rider → Gallivanter Range Rider
 pahantom → Enus Phantasm
 фантом → Enus Phantasm
 Phantas → Enus Phantasm
 фантас → Enus Phantasm
+ровер → Gallivanter Range Rider
+rover → Gallivanter Range Rider
+райдер → Gallivanter Range Rider
+rider → Gallivanter Range Rider
 impreza → Karin Imperia MRX
 импреза → Karin Imperia MRX
 империя → Karin Imperia MRX
 imperia → Karin Imperia MRX
+cruiser200 → Karin Grand Cruiser 200
+крузак200 → Karin Grand Cruiser 200
+крузер200 → Karin Grand Cruiser 200
+тайкан → Pfister Teycan
+taycan → Pfister Teycan
+тейкан → Pfister Teycan
+teycan → Pfister Teycan
+плейд → Coil Plaid
+plaid → Coil Plaid
 теслах → Coil Line X
 teslax → Coil Line X
 моделх → Coil Line X
@@ -460,357 +741,122 @@ modelx → Coil Line X
 койлх → Coil Line X
 coilx → Coil Line X
 коилх → Coil Line X
-плейд → Coil Plaid
-plaid → Coil Plaid
 родстер → Coil Roadster
 roadster → Coil Roadster
-cruiser200 → Karin Grand Cruiser 200
-крузак200 → Karin Grand Cruiser 200
-крузер200 → Karin Grand Cruiser 200
-cruiser300 → Karin Grand Cruiser 300
-крузак300 → Karin Grand Cruiser 300
-крузер300 → Karin Grand Cruiser 300
-марк2 → Karin Marco II
-mark2 → Karin Marco II
-супра → Karin Superia
-supra → Karin Superia
-суперия → Karin Superia
-superia → Karin Superia
-ае86 → Karin Brueno AE86
-ae86 → Karin Brueno AE86
 golf → BF Wolf
 гольф → BF Wolf
 wolf → BF Wolf
 вольф → BF Wolf
-
-<p class='neon-text'>Транспорт | Ретро</p>
-190з → 190z
-блейд → Blade
-b740 → Ubermacht 740
-б740 → Ubermacht 740
-u740 → Ubermacht 740
-у740 → Ubermacht 740
-бриосо → Brioso 300
-букканир → Buccaneer
-каско → Casco
-читаха → Cheetah Classic
-чино → Chino
-клика → Clique
-корветблэк → Coquette BlackFin
-корветклас → Coquette Classic
-девиант → Deviant
-чарж → Bravado Changer LD
-Сhar → Bravado Changer LD
-чанж → Bravado Changer LD
-chang → Bravado Changer LD
-д1968 → Bravado Changer 1968
-d1968 → Bravado Changer 1968
-б1968 → Bravado Changer 1968
-b1968 → Bravado Changer 1968
-доминантор → Dominator
-дюкес → Dukes
-династи → Dynasty
-элли → Ellie
-эмперор → Emperor
-факшион → Faction
-шелби → Vapid Eleanor 1967
-shelby → Vapid Eleanor 1967
-eleonor → Vapid Eleanor 1967
-элеонор → Vapid Eleanor 1967
-eleanor → Vapid Eleanor 1967
-элеанор → Vapid Eleanor 1967
-гаунтлет → Gauntlet
-глиндейл → Glendale
-гт500 → GT500
-гермес → Hermes
-хоткнайф → Hotknife
-хастлер → Hustler
-импалер → Impaler
-император → Imperator
-жб700 → JB 700W
-w140 → Benefactor S-series 600 M140
-кабан → Benefactor S-series 600 M140
-м140 → Benefactor S-series 600 M140
-m140 → Benefactor S-series 600 M140
-небула → Nebula Turbo
-найтшейд → Nightshade
-пеут → Peyote
-феникс → Phoenix
-пикадор → Picador
-пигалль → Pigalle
-рапидгт → Rapid GT
-рэттрак → Rat-Truck
-регина → Regina
-ремус → Remus
-ретиню → Retinue
-рхапсоду → Rhapsody
-русевельт → Roosevelt
-рт3000:RT3000
-руинер → Ruiner
-сабре → Sabre Turbo
-сламван → Slamvan
-сталлион → Stallion
-стингер → Stinger
-стирлинг → Stirling GT
-султан → Sultan ST
-серфер → Surfer
-тампа → Tampa
-торнадо → Tornado
-тюлип → Tulip
-вамос → Vamos
-вигеро → Vigero
-вирго → Virgo
-вуду → Voodoo заказной
-вивил → Weevil
-йосемит → Yosemite
-
-<p class='neon-text'>Транспорт | Внедорожники</p>
-баллер → Baller
-бифта → Bifta
-бизон → Bison
-бобкэт → Bobcat XL
-бодхи → Bodhi
-буррито → Burrito
-бурито → Burrito
-каракара → Caracara 4x4
-кавалкад → Cavalcade
-тахо → Declasse Takho
-tahoe → Declasse Takho
-takho → Declasse Takho
-дубста → Dubsta
-эверон → Everon
-эксплорер → Vapid Endurance
-Explorer → Vapid Endurance
-эндур → Vapid Endurance
-Endur → Vapid Endurance
-фрикравлер → Freecrawler
-грангер → Granger
-гресли → Gresley
-хеллион → Hellion
-хантли → Huntley S
-палисад → Bollokan Palisade
-palisade → Bollokan Palisade
-камачо → Kamacho
-лендсталкер → Landstalker
-меса → Mesa
-новак → Novak
-патриот → Patriot
-ренчер → Rancher XL
-ребла → Rebla GTS
-рокото → Rocoto
-садлер → Sadler
-семиноль → Seminole Frontier
-спидо → Speedo
-спидэ → Speedo Express
-торос → Toros
-tundra → Karin Thunder
-тундра → Karin Thunder
-тундер → Karin Thunder
-thund → Karin Thunder
-xls → XLS
-хлс → XLS
-юга → Youga
-югк → Youga Classic
-
-<p class='neon-text'>Транспорт | Премиум</p>
-драфт → 8F Drafter
-8F → 8F Drafter
-аддер → Adder
-адер → Adder
-альфа → Alpha
-банши → Banshee
-бестиа → Bestia GTS
-бести → Bestia GTS
-буллет → Bullet
-карбонззар → Carbonizzare
-когносценти → Cognoscenti
-комет → Comet ST
-d10 → Coquette D10
-д10 → Coquette D10
-куклон → Cyclone
-циклон → Cyclone
-купер → Cypher
-эмерус → Emerus
-энтити → Entity XXR
-еурос → Euros
-фурия → Furia
-хонгки → Hongqi H9
+поло → BF Solo
+polo → BF Solo
+бсоло → BF Solo
+bsolo → BF Solo
+scir → BF Siccoro
+сцир → BF Siccoro
+сирокк → BF Siccoro
+sicc → BF Siccoro
 gg70 → Bollokan G70
 гг70 → Bollokan G70
 bg70 → Bollokan G70
 бг70 → Bollokan G70
 гровлер → Growler
-фх50 → Fathom XF50
-fx50 → Fathom XF50
-xf50 → Fathom XF50
-хф50 → Fathom XF50
-q50 → Fathom Q50
-к50 → Fathom Q50
-gtb → Itali GTB
-италигтб → Itali GTB
-gto → Itali GTO
-италигто → Itali GTO
-джестер → Jester
-хамелион → Khamelion
-кригер → Krieger
-gs350 → Emperor GC350
-гс350 → Emperor GC350
-gc350 → Emperor GC350
-лконтин → Dundreary Kontinental
-lcontin → Dundreary Kontinental
-dkontin → Dundreary Kontinental
-дконтин → Dundreary Kontinental
-массакро → Massacro
-неро → Nero
-оцелот → Ocelot F620
-ocelot → Ocelot F620
-осирис → Osiris
-парагон → Paragon R
-париах → Pariah
-перетрадор → Penetrator
-рапидгт → Rapid GT
-рипер → Reaper
-револьтер → Revolter
-шлаген → Schlagen GT
-севен → Seven-70
-спектр → Specter
-сурано → Surano
-тейлгейтер → Tailgater ST
-темпеста → Tempesta
-тигон → Tigon
-вакка → Vacca
-вектре → Vectre
-вольтик → Voltic
-виндсор → Windsor
+вито → Benefactor Veto 250
+vito → Benefactor Veto 250
+вето → Benefactor Veto 250
+veto → Benefactor Veto 250
+глс63 → Benefactor JLS63
+gls → Benefactor JLS63
+глс → Benefactor JLS63
+jls → Benefactor JLS63
+silvia → Annis Slivia S15
+сильвия → Annis Slivia S15
+сильвиа → Annis Slivia S15
+slivia → Annis Slivia S15
+сливия → Annis Slivia S15
+сливиа → Annis Slivia S15
+ <p class='neon-text'><i class="fas fa-coins"></i> Ресурсы</p>
+  </pre>
+ </div>
 
-<p class='neon-text'>Транспорт | Мотоциклы</p>
-акума → Akuma
-баггер → Bagger
-бати → Bati 801
-u1000 → Ubermacht 1000R
-у1000 → Ubermacht 1000R
-с1000 → Ubermacht 1000R
-s1000 → Ubermacht 1000R
-карбон → Carbon RS
-клиффхангер → Cliffhanger
-демон → Deamon
-дефилер → Defiler
-диаболус → Diabolus
-даблт → Double-T
-дукати → Ducati Panigale R
-ендуро → Enduro
-эскей → Esskey
-фиггио → Faggio
-фср → FCR 1000
-хакучо → Hakuchou
-лектро → Lectro
-немесис → Nemesis
-псж600 → PCJ 600
-руффиан → Ruffian
-стритб → Street Blazer
-труст → Thrust
-вейдер → Vader
-вортекс → Vortex
+ <!-- Уведомление об ошибке -->
+ <div id="errorPopup" class="popup"></div>
 
-<p class='neon-text'>Транспорт | Самолеты</p>
-кубан → Cuban 800
-додо → Dodo
-люксор → Luxor
-маллард → Mallard
-мамма → Mammatus
-нимбус → Nimbus
-сибриз → Seabreeze
-шамал → Shamal
-ультралайт → Ultralight
-велум → Velum
-вестра → Vestra
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+ <script>
+  function search() {
+ var input = document.getElementById("searchInput");
+ var searchText = input.value.toLowerCase();
+ var resultsContainer = document.getElementById("searchResults");
+ var results = "";
+ var matches = 0;
+ 
+ var lines = document.getElementById("transportList").textContent.split("\n");
+ lines.forEach(function (line) {
+  if (line.toLowerCase().includes(searchText)) {
+   var markedLine = line.replace(new RegExp(searchText, "gi"), function (match) {
+  return "<mark>" + match + "</mark>";
+   });
+   results += "<div class='search-result'><pre>" + markedLine + "</pre></div>";
+   matches++;
+  }
+ });
+ 
+ // Add the searching animation
+ var searchButton = document.querySelector(".search-button");
+ var searchIcon = document.createElement("i");
+ searchIcon.classList.add("fas", "fa-search", "fa-spin");
+ 
+ searchButton.innerHTML = "";
+ searchButton.appendChild(searchIcon);
+ 
+ setTimeout(function () {
+  searchButton.innerHTML = "Искать";
+ }, 600);
+ 
+ if (results !== "") {
+  resultsContainer.innerHTML = results;
+  showSuccessPopup("Найдено совпадений: " + matches);
+ } else {
+  showErrorPopup("Совпадений не найдено");
+ }
+  }
 
-<p class='neon-text'>Транспорт | Вертолеты</p>
-Буззард → Buzzard
-каргобоб → Cargobob
-Фроггер → Frogger
-Хавок → Havok 
-Маверик → Maverick
-Спарроу → Sparrow 
-Волито → SuperVolito
-Свифт → Swift
-Волатус → Volatus
+  function showSuccessPopup(message) {
+ var popup = document.getElementById("errorPopup");
+ popup.innerHTML = '<div class="success-popup"><i class="fas fa-check-circle"></i> ' + message + '<div class="popup-progress-bar"></div></div>';
+ popup.classList.add("active");
+ setTimeout(function() {
+  popup.classList.remove("active");
+ }, 1200);
+  }
 
-<p class='neon-text'>Транспорт | Лодки</p>
-динги → Dinghy
-джетмакс → Jetmax
-лонгфин → Longfin
-маркиз → Markquis
-сишарк → Seashark
-спидер → Speeder
-сквало → Squalo
-сунтрап → Suntrap
-тропик → Tropic
-
-<p class='neon-text'>Транспорт | Коммерческий</p>
-румпо → Bravado Rumpo Box
-rumpo → Bravado Rumpo Box
-флатбет → Flatbed
-флатбед → Flatbed
-flatbed → Flatbed
-мулн → Maibatsu Mule Neo
-муле → Maibatsu Mule
-брикад → MTL Brickade
-танкер → MTL Tanker
-паундер → MTL Pounder
-бенсон → Vapid Benson
-спидб → Vapid Speedo Box
-янки → Vapid Yankee
-        </pre>
-    </div>
-
-    <div id="successPopup" class="popup"></div>
-    <div id="errorPopup" class="popup"></div>
-
-    <script>
-        function search() {
-            var input = document.getElementById("searchInput");
-            var searchText = input.value.toLowerCase();
-            var resultsContainer = document.getElementById("searchResults");
-            var results = "";
-            var matches = 0;
-
-            var lines = document.getElementById("transportList").textContent.split("\n");
-            lines.forEach(function(line) {
-                if (line.toLowerCase().includes(searchText)) {
-                    var markedLine = line.replace(new RegExp(searchText, "gi"), function(match) {
-                        return "<mark>" + match + "</mark>";
-                    });
-                    results += "<div class='search-result'><pre>" + markedLine + "</pre></div>";
-                    matches++;
-                }
-            });
-
-            if (results !== "") {
-                resultsContainer.innerHTML = results;
-                showSuccessPopup("Найдено совпадений: " + matches);
-            } else {
-                showErrorPopup("Совпадений не найдено.");
-            }
-        }
-
-        function showSuccessPopup(message) {
-            var popup = document.getElementById("successPopup");
-            popup.innerHTML = message;
-            popup.classList.add("active");
-            setTimeout(function() {
-                popup.classList.remove("active");
-            }, 2000);
-        }
-
-        function showErrorPopup(message) {
-            var popup = document.getElementById("errorPopup");
-            popup.innerHTML = message;
-            popup.classList.add("active");
-            setTimeout(function() {
-                popup.classList.remove("active");
-            }, 2000);
-        }
-    </script>
+  function showErrorPopup(message) {
+ var popup = document.getElementById("errorPopup");
+ popup.innerHTML = '<div class="error-popup"><i class="fas fa-exclamation-circle"></i> ' + message + '<div class="popup-progress-bar"></div></div>';
+ popup.classList.add("active");
+ setTimeout(function() {
+  popup.classList.remove("active");
+ }, 1200);
+  }
+  // Function to scroll to the "Лимитированные" text
+  function scrollToLimitir() {
+    var limitirHeading = document.querySelector(".neonlimit-text");
+    if (limitirHeading) {
+      limitirHeading.scrollIntoView({ behavior: "smooth" });
+    }
+}
+    function scrollToOffroad() {
+    var limitirHeading = document.querySelector(".neonvnedor-text");
+    if (limitirHeading) {
+      limitirHeading.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+  function scrollTomotiki() {
+    var limitirHeading = document.querySelector(".neonmotiki-text");
+    if (limitirHeading) {
+      limitirHeading.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+ </script>
 </body>
 </html>
