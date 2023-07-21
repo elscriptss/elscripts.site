@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Elvis Script's - Наши продукты</title>
+  <title>Elvis Script's</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="https://i.ibb.co/hgzJMtN/image.png">
@@ -16,7 +16,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      height: 160vh;
       margin: 0;
       position: relative;
     }
@@ -31,13 +31,15 @@
       display: flex;
       align-items: center;
       position: absolute;
-      top: 20px;
+      top: 6px;
       left: 20px;
     }
     .logo {
       width: 50px;
       height: 50px;
       margin-right: 10px;
+      pointer-events: none;
+      user-select: none;
     }
     .elvis-text {
       font-size: 15px;
@@ -80,6 +82,8 @@
       display: block;
       margin: 0 auto;
       position: relative;
+      pointer-events: none;
+      user-select: none;
     }
     p {
             font-weight: semibold;
@@ -345,7 +349,7 @@
     .account2-btn {
       position: absolute;
       top: 20px;
-      right: 246px;
+      right: 237px;
       background-color: #1F212E;
       color: #FFFFFF;
       padding: 10px 20px;
@@ -439,6 +443,7 @@
       display: block;
       margin: 0 auto;
       position: relative;
+      pointer-events: none;
     }
     .popup-message .close-btn {
       position: absolute;
@@ -519,6 +524,7 @@
       display: block;
       margin: 0 auto;
       position: relative;
+      pointer-events: none;
     }
     .popup-message2 .close-btn {
       position: absolute;
@@ -571,6 +577,7 @@
   display: block;
   margin: 0 auto;
   position: relative;
+  pointer-events: none;
 }
 .popup-messagemh .close-btn {
   position: absolute;
@@ -633,6 +640,7 @@
       display: block;
       margin: 0 auto;
       position: relative;
+      pointer-events: none;
     }
     .popup-message3 .close-btn {
       position: absolute;
@@ -695,6 +703,12 @@
       margin: 0 auto;
       position: relative;
     }
+
+    ::selection {
+  background-color: #60A5FA;
+  color: #fff; /* Цвет текста в выделенном блоке (если нужно изменить) */
+}
+
     .popup-message4 .close-btn {
       position: absolute;
       top: 10px;
@@ -735,6 +749,107 @@
     background-color: #3D4260;
     border-radius: 5px;
   }
+      body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+::-webkit-scrollbar {
+      width: 10px; /* Ширина полосы */
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: #202027; /* Цвет фона полосы */
+      border-radius: 5px; /* Скругление краев фона полосы */
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #3D4260; /* Цвет полосы прокрутки */
+      border-radius: 5px; /* Скругление краев полосы прокрутки */
+    }
+    .news-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Стили для постов */
+    .post {
+      width: 350px;
+      margin: 20px;
+      background-color: #1F212E;
+      border-radius: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      margin-bottom: 30px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .post:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .post img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px 15px 0 0;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .post-content {
+      padding: 20px;
+    }
+
+    .post-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0;
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .main-title {
+      margin-top: 50px;
+      font-size: 50px;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      /* Неоновое свечение */
+      text-shadow: 0 0 50px rgba(255, 255, 255, 0.5), 0 0 1px #ffffff;
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    .main-title2 {
+      margin-top: 90px;
+      font-size: 50px;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      /* Неоновое свечение */
+      text-shadow: 0 0 50px rgba(255, 255, 255, 0.5), 0 0 1px #ffffff;
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    .read-button {
+      position: relative;
+      display: inline-block;
+      padding: 8px 20px;
+      background-color: #4B8BE8;
+      color: #fff;
+      border-radius: 12px;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+    .read-button:hover {
+      transform: scale(1.1);
+    }
   </style>
 </head>
 <body>
@@ -742,7 +857,7 @@
     <img class="logo" src="https://i.ibb.co/hgzJMtN/image.png" alt="Logo">
     <span class="elvis-text">Elvis Script's</span>
   </div>
-  <h1>Наши продукты</h1>
+  <h3 class="main-title2">Наши продукты</h3>
   <div class="online-container">
     <span class="neon-graph">
       <i class="fa-solid fa-earth-americas"></i>
@@ -846,18 +961,44 @@
     </div>
 </div>
 
-  <!-- Popup Message -->
-  <div class="popup-message" id="popup">
-    <span class="close-btn" onclick="hidePopup()">&times;</span>
-    <h2>Как войти в личный кабинет?</h2>
-    <div style="position: relative;">
-    <p style="font-weight: semibold;">Чтобы воспользоваться личным кабинетом используйте нашего бота Discord eBot, введя команду <span style="color: #4B8BE8;">/profile</span></p>
-    <div>
-        <img src="https://i.ibb.co/bdtDTPk/image.png" alt="Arizona Tools">
-      <a class="link-btn" href="https://discord.gg/elvis-scripts-872567697186103356"><i class="fa-brands fa-discord"></i> Открыть ссылку на eBot</a>
+<h3 class="main-title">Новости проекта</h3>
+<div class="news-container">
+  <div class="post">
+    <img src="https://media.discordapp.net/attachments/872569987565506600/1131730133842137168/image.png?width=1344&height=683" alt="Изображение поста 1">
+    <div class="post-content">
+      <h3 class="post-title">А у нас уже новый сайт! А у вас?</h3>
+      <a class="read-button" href="https://discord.gg/elvis-scripts-872567697186103356">Читать</a>
+    </div>
+  </div>
+  <div class="post">
+    <img src="https://media.discordapp.net/attachments/872569987565506600/1126613429956902923/image.png?width=1214&height=683" alt="Изображение поста 2">
+    <div class="post-content">
+      <h3 class="post-title">Организационные задания в ePad 3.0?</h3>
+      <a class="read-button" href="https://discord.gg/elvis-scripts-872567697186103356">Читать</a>
+    </div>
+  </div>
+  <div class="post">
+    <img src="https://media.discordapp.net/attachments/872569987565506600/1123337960922824824/70a26a80df683ad8.png?width=1214&height=683" alt="Изображение поста 3">
+    <div class="post-content">
+      <h3 class="post-title">Статистика ePad 3.0 за 24 часа!</h3>
+      <a class="read-button" href="https://discord.gg/elvis-scripts-872567697186103356">Читать</a>
     </div>
   </div>
 </div>
+
+ <!-- Popup Message -->
+ <div class="popup-message" id="popup">
+  <span class="close-btn" onclick="hidePopup()">&times;</span>
+  <h2>Как войти в личный кабинет?</h2>
+  <div style="position: relative;">
+  <p style="font-weight: semibold;">Чтобы воспользоваться личным кабинетом используйте нашего бота Discord eBot, введя команду <span style="color: #4B8BE8;">/profile</span></p>
+  <div>
+      <img src="https://i.ibb.co/bdtDTPk/image.png" alt="Arizona Tools">
+    <a class="link-btn" href="https://discord.gg/elvis-scripts-872567697186103356"><i class="fa-brands fa-discord"></i> Открыть ссылку на eBot</a>
+  </div>
+</div>
+</div>
+
 
 <div class="popup-message3" id="popup3">
   <span class="close-btn" onclick="hidePopup3()">&times;</span>
@@ -865,7 +1006,7 @@
   <div style="position: relative;">
   <p style="font-weight: semibold;">На наши продукты могут ругаться антивирусы. Мы пытаемся исправлять эти моменты еженедельно, если у вас не получается скачать скрипт попробуйте отключить антивирус на некоторое время!</p>
   <div>
-      <img src="https://i.ibb.co/YDXFnhK/xcvxcvxczxczxczxxzaasd.png"alt="AntiVirus Info">
+      <img src="https://i.ibb.co/YDXFnhK/xcvxcvxczxczxczxxzaasd.png" draggable="false" alt="AntiVirus Info">
     <a class="link-btn" href="https://habr.com/ru/companies/pt/articles/724470/#:~:text=False%20positive%20%E2%80%94%20%D1%81%D0%B8%D1%82%D1%83%D0%B0%D1%86%D0%B8%D1%8F%2C%20%D0%BA%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%BD%D0%B0,%D0%BE%D0%BA%D0%BE%D0%BD%D1%87%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%20%D0%BF%D0%BE%D1%82%D0%B5%D1%80%D1%8F%D1%82%D1%8C%20%D0%B4%D0%BE%D0%B2%D0%B5%D1%80%D0%B8%D0%B5%20%D0%BA%20%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%B0%D0%BC.">Почему ругается антивирус?</a>
   </div>
 </div>
@@ -876,7 +1017,7 @@
   <h2>Реквизиты</h2>
   <div style="position: relative;">
   <p style="font-weight: bold;"><i class="fa-solid fa-credit-card"></i>                 Tinkoff Bank: <span id="accountNumber" style="color: #4B8BE8; font-weight: semibold;">2200 7004 1329 0213</span></p>
-  <p style="font-weight: bold;"><i class="fa-solid fa-credit-card"></i>                 Qivi Bank: <span id="accountNumber2" style="color: #4B8BE8; font-weight: semibold;">4890 4947 8028 9880</span> или <span id="accountNumber2" onclick="redirectToLink()" style="color: #4B8BE8; font-weight: semibold;">MHV15</span></p>
+  <p style="font-weight: bold;"><i class="fa-solid fa-credit-card"></i>                 Qiwi Bank: <span id="accountNumber2" style="color: #4B8BE8; font-weight: semibold;">4890 4947 8028 9880</span> или <span id="accountNumber2" onclick="redirectToLink()" style="color: #4B8BE8; font-weight: semibold;">MHV15</span></p>
   <div>
     <a class="link-btn" href="https://www.tinkoff.ru/rm/mikhaylov.nikita351/vJolK39901">Ссылка на онлайн перевод</a>
   </div>
@@ -904,7 +1045,7 @@
       <p style="font-weight: semibold;">Таким образом, ePad 3.0 является значительным улучшением предыдущей версии, предлагая игрокам более функциональный и настраиваемый инструмент для отыгрывания ролей и выполнения задач в государственных структурах!</p>
   <div>
   </div>
-      <img src="https://i.ibb.co/9g9Q74Y/image.png" alt="ePad 3.0">
+      <img src="https://i.ibb.co/9g9Q74Y/image.png" draggable="false" alt="ePad 3.0">
   </div>
 </div>
 </div>
@@ -921,6 +1062,37 @@
 
 
   <script>
+ const accessToken = 'YOUR_ACCESS_TOKEN';
+  const apiVersion = '5.131';
+  const groupId = 'group_id';
+  const count = 5;
+
+  const requestUrl = `https://api.vk.com/method/wall.get?owner_id=-213599804&count=$5&access_token=${accessToken}&v=${apiVersion}`;
+
+  function renderFeed(data) {
+    const feedContainer = document.getElementById('vk_feed');
+
+    data.items.forEach(item => {
+      const postElement = document.createElement('div');
+      postElement.innerHTML = `
+        <h3>${item.text}</h3>
+        <p>Дата публикации: ${new Date(item.date * 1000).toLocaleString()}</p>
+        <hr>
+      `;
+      feedContainer.appendChild(postElement);
+    });
+  }
+
+  fetch(requestUrl)
+    .then(response => response.json())
+    .then(data => {
+      if (data.error) {
+        console.error('Ошибка получения данных из ВКонтакте:', data.error);
+      } else {
+        renderFeed(data.response);
+      }
+    })
+    .catch(error => console.error('Ошибка запроса к API ВКонтакте:', error));
 const updateOnline = async () => {
   const valueElement = document.querySelector(".neon-graph .value");
   try {
