@@ -156,18 +156,46 @@
       position: relative;
     }
     .neon-graph {
-        font-size: 15px;
-        font-weight: bold;
-      display: inline-block;
-      background-color: #60A5FA;
-      padding: 6px;
-      border-radius: 13px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      animation: neonGlow 1.5s linear infinite alternate;
-      position: relative;
-      cursor: pointer;
-      transition: transform 0.3s ease-in-out;
-    }
+  position: relative;
+  display: inline-block;
+  background-color: #1F212E;
+  padding: 6px;
+  border-radius: 13px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden; /* Ensure the progress bar stays within the container */
+}
+
+/* Progress bar */
+.neon-graph::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0; /* Start with height 0, it will be animated later */
+  background-color: #60A5FA;
+  border-radius: 0 0 13px 13px;
+  animation: fillWater 3s;
+}
+
+.neon-graph:hover {
+  transform: scale(1.1);
+}
+.neon-graph .value {
+  opacity: 0; /* Start with opacity 0 to hide the element initially */
+  animation: fadeIn 1s ease-in-out forwards; /* Apply the fadeIn animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
     .neon-graph i {
         margin-right: 12px;
       width: 10px;
@@ -402,10 +430,12 @@
   </div>
   <h1>Наши продукты</h1>
   <div class="online-container">
-    <span class="neon-graph"><i class="fa-solid fa-earth-americas"></i>1234</span>
+    <span class="neon-graph">
+      <i class="fa-solid fa-earth-americas"></i>
+      <span class="value">...</span>
+    </span>
     <p class="neon-text">Пользователей в сети</p>
   </div>
-
   <div class="account-btn" onclick="showPopup()">
     <i class="fas fa-user"></i>
     Личный кабинет
@@ -531,6 +561,44 @@
 </div>
 
   <script>
+const updateOnline = async () => {
+  const valueElement = document.querySelector(".neon-graph .value");
+  try {
+    const response = await fetch("https://gamedb-api.arizona-v.com/elvis/public/online", {
+      method: "GET",
+      mode: "cors",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    }).then((res) => res.json());
+
+    if (!response.success) {
+      return (valueElement.textContent = 0);
+    }
+
+    const oldValue = valueElement.textContent;
+    const newValue = response.data.online;
+
+    if (oldValue !== newValue) {
+      valueElement.textContent = newValue;
+    }
+  } catch (err) {
+    return (valueElement.textContent = 0);
+  }
+};
+
+// Update the online counter every 10 seconds
+setInterval(() => {
+  updateOnline();
+  const valueElement = document.querySelector(".neon-graph .value");
+  valueElement.style.animation = "none"; // Reset the animation by setting it to "none"
+  void valueElement.offsetWidth; // Trigger reflow to restart the animation
+  valueElement.style.animation = "fadeIn 1s ease-in-out forwards"; // Apply the animation again
+}, 10000);
+      updateOnline();
+  // Update the online counter every 10 seconds
+  setInterval(updateOnline, 10000);
     function showPopup() {
       document.getElementById("popup").style.display = "block";
       setTimeout(function () {
