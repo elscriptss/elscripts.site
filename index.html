@@ -161,10 +161,10 @@
       background-color: #FF9F1C;
       color: #FFFFFF;
       padding: 5px 10px;
-      border-radius: 12px;
+      border-radius: 13px;
       font-size: 14px;
       margin-bottom: 5px;
-      width: 115px;
+      width: 103px;
     }
     .tag i {
       margin-right: 5px;
@@ -176,7 +176,7 @@
       flex-wrap: wrap;
       color: #FFFFFF;
       padding: 5px 10px;
-      border-radius: 10px;
+      border-radius: 13px;
       font-size: 14px;
       margin-bottom: 5px;
       width: 87px;
@@ -200,7 +200,7 @@
     font-size: 20px;
     font-weight: bold;
     color: #60A5FA;
-    animation: neonAnimation 2s infinite;
+    animation: neonAnimation 10s infinite;
   }
 
   @keyframes neonAnimation {
@@ -853,6 +853,9 @@
   </style>
 </head>
 <body>
+  <div class="cover-container">
+    <iframe src="https://www.example.com/embeddable-content" width="600" height="400" frameborder="0" allowfullscreen></iframe>
+  </div>
   <div class="logo-container">
     <img class="logo" src="https://i.ibb.co/hgzJMtN/image.png" alt="Logo">
     <span class="elvis-text">Elvis Script's</span>
@@ -879,6 +882,29 @@
   </a>
 
   <div class="container">
+    <div class="product" style="display: flex; flex-direction: column;">
+      <div style="position: relative;">
+        <img src="https://i.ibb.co/6JvN4bV/fdvxcvxcvxc.png" alt="eLoader">
+        <div style="display: flex; gap: 12px; padding: 5px 0 0 5px; position: absolute; top: 0; left: 0;">
+          <div class="tag">
+            <i class="fas fa-star"></i>
+            Популярное
+          </div>
+            </div>
+          </div>
+
+      <!-- Buttons block moved here -->
+      <div style="padding: 0 20px 20px 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+        <h2>eLoader</h2>
+        <p>Загрузчик всех наших продуктов в одном приложении!</p>
+        <a href="#"><i class="fa-solid fa-code fa-fade"></i>    В разработке</a>
+        <div class="linkes">
+            <div style="padding: 2 20px 20px 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+              <a href="#">О продукте</a>
+            </div>
+        </div>
+    </div>
+  </div>
     <div class="product" style="display: flex; flex-direction: column;">
       <div style="position: relative;">
         <img src="https://i.ibb.co/smfjd5D/image.png" alt="ePad">
@@ -1062,37 +1088,6 @@
 
 
   <script>
- const accessToken = 'YOUR_ACCESS_TOKEN';
-  const apiVersion = '5.131';
-  const groupId = 'group_id';
-  const count = 5;
-
-  const requestUrl = `https://api.vk.com/method/wall.get?owner_id=-213599804&count=$5&access_token=${accessToken}&v=${apiVersion}`;
-
-  function renderFeed(data) {
-    const feedContainer = document.getElementById('vk_feed');
-
-    data.items.forEach(item => {
-      const postElement = document.createElement('div');
-      postElement.innerHTML = `
-        <h3>${item.text}</h3>
-        <p>Дата публикации: ${new Date(item.date * 1000).toLocaleString()}</p>
-        <hr>
-      `;
-      feedContainer.appendChild(postElement);
-    });
-  }
-
-  fetch(requestUrl)
-    .then(response => response.json())
-    .then(data => {
-      if (data.error) {
-        console.error('Ошибка получения данных из ВКонтакте:', data.error);
-      } else {
-        renderFeed(data.response);
-      }
-    })
-    .catch(error => console.error('Ошибка запроса к API ВКонтакте:', error));
 const updateOnline = async () => {
   const valueElement = document.querySelector(".neon-graph .value");
   try {
@@ -1127,10 +1122,10 @@ setInterval(() => {
   valueElement.style.animation = "none"; // Reset the animation by setting it to "none"
   void valueElement.offsetWidth; // Trigger reflow to restart the animation
   valueElement.style.animation = "fadeIn 1s ease-in-out forwards"; // Apply the animation again
-}, 10000);
+}, 30000);
       updateOnline();
   // Update the online counter every 10 seconds
-  setInterval(updateOnline, 10000);
+  setInterval(updateOnline, 30000);
     function showPopup() {
       document.getElementById("popup").style.display = "block";
       setTimeout(function () {
