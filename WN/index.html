@@ -12,7 +12,7 @@
   body {
  background-color: #181818;
  color: #fff;
- font-family: Montserrat, sans-serif;
+ font-family: 'Montserrat';
   }
 
   .code {
@@ -53,7 +53,7 @@
  border-radius: 5px;
  border: none;
  background-color: #292929;
- color: #fff;
+ color: #adadad;
  width: 400px;
  font-size: 16px;
  margin-right: 10px;
@@ -135,25 +135,128 @@
  color: #ffffff; /* Изменим цвет текста на розовый */
  font-size: 14px;
  font-weight: Bold;
- padding: -5px 0px;
+ margin-bottom: 0px;
+ padding: 0px 0px;
  border-radius: 0px;
  margin: 0; /* Убираем вертикальный отступ */
   }
 
   .neonvnedor-text {
- color: #ffffff; /* Изменим цвет текста на розовый */
+    color: #ffffff; /* Изменим цвет текста на розовый */
  font-size: 14px;
  font-weight: Bold;
- padding: -5px 0px;
+ margin-bottom: 0px;
+ padding: 0px 0px;
  border-radius: 0px;
  margin: 0; /* Убираем вертикальный отступ */
   }
   .neonmotiki-text {
- color: #ffffff; /* Изменим цвет текста на розовый */
+    color: #ffffff; /* Изменим цвет текста на розовый */
  font-size: 14px;
  font-weight: Bold;
- padding: -5px 0px;
+ margin-bottom: 0px;
+ padding: 0px 0px;
  border-radius: 0px;
+ margin: 0; /* Убираем вертикальный отступ */
+  }
+
+  .neonnedvijim-text {
+    color: #ffffff; /* Изменим цвет текста на розовый */
+ font-size: 18px;
+ font-weight: bold;
+ padding: 0px 0px;
+ border-radius: 0px;
+ text-align: center;
+ margin: 0; /* Убираем вертикальный отступ */
+  }
+
+  .neongorodarayon-text {
+    color: #ffffff; /* Изменим цвет текста на розовый */
+ font-size: 18px;
+ font-weight: bold;
+ padding: 0px 0px;
+ border-radius: 0px;
+ text-align: center;
+ margin: 0; /* Убираем вертикальный отступ */
+  }
+
+  .neontourobjets-text {
+    color: #ffffff; /* Изменим цвет текста на розовый */
+ font-size: 18px;
+ font-weight: bold;
+ padding: 0px 0px;
+ border-radius: 0px;
+ text-align: center;
+ margin: 0; /* Убираем вертикальный отступ */
+  }
+
+  .neondiving-text {
+    color: #ffffff; /* Изменим цвет текста на розовый */
+ font-size: 18px;
+ font-weight: bold;
+ padding: 0px 0px;
+ border-radius: 0px;
+ text-align: center;
+ margin: 0; /* Убираем вертикальный отступ */
+  }
+
+  .neonribalka-text {
+    color: #ffffff; /* Изменим цвет текста на розовый */
+ font-size: 18px;
+ font-weight: bold;
+ padding: 0px 0px;
+ border-radius: 0px;
+ text-align: center;
+ margin: 0; /* Убираем вертикальный отступ */
+  }
+
+  .neonobmen-text {
+    color: #ffffff; /* Изменим цвет текста на розовый */
+ font-size: 18px;
+ font-weight: bold;
+ padding: 0px 0px;
+ border-radius: 0px;
+ text-align: center;
+ margin: 0; /* Убираем вертикальный отступ */
+  }
+
+  .neonodejda-text {
+    color: #ffffff; /* Изменим цвет текста на розовый */
+ font-size: 18px;
+ font-weight: bold;
+ padding: 0px 0px;
+ border-radius: 0px;
+ text-align: center;
+ margin: 0; /* Убираем вертикальный отступ */
+  }
+
+  .neonintrumenti-text {
+    color: #ffffff; /* Изменим цвет текста на розовый */
+ font-size: 18px;
+ font-weight: bold;
+ padding: 0px 0px;
+ border-radius: 0px;
+ text-align: center;
+ margin: 0; /* Убираем вертикальный отступ */
+  }
+
+  .neonstoimosti-text {
+    color: #ffffff; /* Изменим цвет текста на розовый */
+ font-size: 18px;
+ font-weight: bold;
+ padding: 0px 0px;
+ border-radius: 0px;
+ text-align: center;
+ margin: 0; /* Убираем вертикальный отступ */
+  }
+
+  .neonresiuroj-text {
+    color: #ffffff; /* Изменим цвет текста на розовый */
+ font-size: 18px;
+ font-weight: bold;
+ padding: 0px 0px;
+ border-radius: 0px;
+ text-align: center;
  margin: 0; /* Убираем вертикальный отступ */
   }
 
@@ -171,7 +274,25 @@
  padding: 5px;
  border-radius: 3px;
   }
-
+    .logo-container {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 6px;
+      left: 20px;
+    }
+    .logo {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+      pointer-events: none;
+      user-select: none;
+    }
+    .elvis-text {
+      font-size: 15px;
+      color: #FFFFFF;
+      font-weight: bold;
+    }
   .popup {
  position: fixed;
  bottom: 20px; /* Расположение уведомления снизу */
@@ -191,12 +312,6 @@
   .popup.active {
  opacity: 1;
  pointer-events: auto;
-  }
-
-  .success-popup {
-  }
-
-  .error-popup {
   }
 
   /* Добавляем анимацию "Spin" к иконкам */
@@ -239,6 +354,10 @@
 <body>
 
 <body>
+  <div class="logo-container">
+    <img class="logo" src="https://i.ibb.co/hgzJMtN/image.png" alt="Logo">
+    <span class="elvis-text">Elvis Script's</span>
+  </div>
  <!-- Your existing HTML code ... -->
 
  <!-- Scroll to Top Button -->
@@ -271,31 +390,18 @@
  <p class='neon1-text'><i class="fas fa-info-circle"></i> Формат: Кодовое слово → замена слова</p>
  <p class='neon5-text'> Быстрые кнопки</p>
  <div class="fast-button-container">
- <button class="fast-button" onclick="scrollToLimitir()"><i class="fas fa-arrow-down"></i> Транспорт: Лимитированные</button>
- <button class="fast-button" onclick="scrollToOffroad()"><i class="fas fa-arrow-down"></i> Транспорт: Внедорожники</button>
- <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Мотоциклы</button>
- <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Эксклюзивные</button>
- <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Коммерческий</button>
- <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Комфорт</button>
- <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Премиум</button>
- <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Ретро и Маслкары</button>
- <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Акционные</button>
- <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Эконом</button>
- <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Самолеты</button>
- <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Вертолеты</button>
- <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Лодки</button>
- <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Транспорт: Комплекты и детали</button>
+ <button class="fast-button" onclick="scrollToLimitir()"><i class="fas fa-arrow-down"></i> Транспорт</button>
 
- <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Ресурсы и урожай</button>
- <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Стоимости</button>
- <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Инструменты</button>
- <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Одежда и бренды</button>
- <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Обмен</button>
- <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Рыбалка</button>
- <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Дайвинг</button>
- <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Туристические объекты</button>
- <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Города и районы</button>
- <button class="fast-button" onclick="scrollTomotiki()"><i class="fas fa-arrow-down"></i> Недвижимость и бизнесы +(г.м, подвалы т.п)</button>
+ <button class="fast-button" onclick="scrollToresiuroj()"><i class="fas fa-arrow-down"></i> Ресурсы и урожай</button>
+ <button class="fast-button" onclick="scrollTostoimosti()"><i class="fas fa-arrow-down"></i> Стоимости</button>
+ <button class="fast-button" onclick="scrollTointrumenti()"><i class="fas fa-arrow-down"></i> Инструменты</button>
+ <button class="fast-button" onclick="scrollToodejda()"><i class="fas fa-arrow-down"></i> Одежда и бренды</button>
+ <button class="fast-button" onclick="scrollToobmen()"><i class="fas fa-arrow-down"></i> Обмен</button>
+ <button class="fast-button" onclick="scrollToribalka()"><i class="fas fa-arrow-down"></i> Рыбалка</button>
+ <button class="fast-button" onclick="scrollTodiving()"><i class="fas fa-arrow-down"></i> Дайвинг</button>
+ <button class="fast-button" onclick="scrollTotourobjets()"><i class="fas fa-arrow-down"></i> Туристические объекты</button>
+ <button class="fast-button" onclick="scrollTogorodarayon()"><i class="fas fa-arrow-down"></i> Города и районы</button>
+ <button class="fast-button" onclick="scrollTonedvijim()"><i class="fas fa-arrow-down"></i> Недвижимость и бизнесы +(г.м, подвалы т.п)</button>
 </div>
  <p class='neon-text'><i class="fas fa-car"></i> Транспорт</p>
  <p class='neonlimit-text'><i class="fas fa-car"></i> Лимитированные</p>
@@ -408,6 +514,7 @@
  gtx → Principe GTX
  атс → Grotti ATS
  ats → Grotti ATS
+
  <p class='neonvnedor-text'><i class="fas fa-truck-monster"></i> Внедорожники</p>
 буррито → Burrito
 бурито → Burrito
@@ -489,7 +596,7 @@ ultima → Annis Ultima
 труст → Thrust
 вейдер → Vader
 
-<p class='neon2-text'><i class="fas fa-motorcycle"></i> Эксклюзивные</p>
+<p class='neonexclus-text'><i class="fas fa-car"></i> Эксклюзивные</p>
 ае86 → Karin Brueno AE86
 ae86 → Karin Brueno AE86
 е36 → Ubermacht E36
@@ -778,7 +885,637 @@ silvia → Annis Slivia S15
 slivia → Annis Slivia S15
 сливия → Annis Slivia S15
 сливиа → Annis Slivia S15
- <p class='neon-text'><i class="fas fa-coins"></i> Ресурсы</p>
+
+<p class='neon2-text'><i class="fas fa-ship"></i> Лодки</p>
+динги → Dinghy
+джетмакс → Jetmax
+сунтрап → Suntrap
+лонгфин → Longfin
+маркиз → Markquis
+сишарк → Seashark
+спидер → Speeder
+сквало → Squalo
+тропик → Tropic
+
+<p class='neon2-text'><i class="fas fa-plane"></i> Самолеты</p>
+мамма → Mammatus
+додо → Dodo
+шамал → Shamal
+люксор → Luxor
+ультралайт → Ultralight
+кубан → Cuban 800
+маллард → Mallard
+нимбус → Nimbus
+сибриз → Seabreeze
+велум → Velum
+вестра → Vestra
+
+<p class='neon2-text'><i class="fas fa-helicopter"></i> Вертолеты</p>
+каргобоб → Cargobob
+Маверик → Maverick
+Волито → SuperVolito
+Волатус → Volatus
+Свифт → Swift
+Буззард → Buzzard
+Спарроу → Sparrow 
+Фроггер → Frogger
+Хавок → Havok 
+
+<p class='neon2-text'><i class="fas fa-baby-carriage"></i> Эконом транспорт</p>
+клаб → Club
+интрудер → Intruder
+мунбим → Moonbeam
+стейнер → Stanier
+станиер → Stanier
+стратум → Stratum
+асбо → Asbo
+асеа → Asea
+астероп → Asterope
+биджей → BeeJay XL
+дилеттант → Dilettante
+футо → Futo
+набанеро → Habanero
+ингот → Ingot
+интрудер → Intruder
+минивен → Minivan
+прайри → Prairie
+прерьер → Premier
+примо → Primo
+радиус → Radius
+семиноль → Seminole
+сург → Surge
+вашингтон → Washington
+
+<p class='neon2-text'><i class="fas fa-sleigh"></i> Акционные</p>
+fordgt → Vapid GS
+фордгт → Vapid GS
+вапгс → Vapid GS
+vapgs → Vapid GS
+рапт22 → Vapid Predator Winter `22
+кулин22 → Enus Callinon Winter `22
+калин22 → Enus Callinon Winter `22
+гемер22 → Overflod Genera Winter `22
+оверфлод22 → Overflod Genera Winter `22
+скиду → Ski-Doo Winter `22
+skidoo → Ski-Doo Winter `22
+ghostbusters → GhostBusters Halloween '22
+гостбастерс → GhostBusters Halloween '22
+скубиду → Scoobydoo Halloween '22
+Scoobydoo → Scoobydoo Halloween '22
+нова → Chevrolet Nova Halloween '22
+nova → Chevrolet Nova Halloween '22
+лурчер → Lurcher
+ратлоудер → Rat-Loader
+ratloader → Rat-Loader
+санктус → Sanctus
+sanctus → Sanctus
+торнадрат → Tornado Rat Rod
+TornadRat → Tornado Rat Rod
+плимут → Plymouth Halloween '22
+Plymouth → Plymouth Halloween '22
+cruiser300 → Karin Grand Cruiser 300
+крузак300 → Karin Grand Cruiser 300
+крузер300 → Karin Grand Cruiser 300
+цсл → Ubermacht CSL
+csl → Ubermacht CSL
+альфа → Alpha
+е60 → Ubermacht W5 E60
+e60 → Ubermacht W5 E60
+chiron → Truffade Shiron
+shiron → Truffade Shiron
+чирон → Truffade Shiron
+широн → Truffade Shiron
+divo → Bugatti Divo
+диво → Bugatti Divo
+атлантик → Bugatti Atlantic
+atlantic → Bugatti Atlantic
+муллинер → Bentley Mulliner
+mulliner → Bentley Mulliner
+flash → Flash GT
+флеш → Flash GT
+панто → Panto
+camry → Karin Camria
+camri → Karin Camria
+камри → Karin Camria
+вивил → Weevil
+оутлендер → Maibatsu Outcruise
+аутлендер → Maibatsu Outcruise
+outlander → Maibatsu Outcruise
+outcruise → Maibatsu Outcruise
+оуткруз → Maibatsu Outcruise
+ауткруз → Maibatsu Outcruise
+дастер → Maibatsu Duster
+duster → Maibatsu Duster
+рав4 → Karin RAW4
+rav4 → Karin RAW4
+raw4 → Karin RAW4
+
+<p class='neon2-text'><i class="fas fa-train"></i> Ретро и маслкары</p>
+лп400 → Pegassi Coutron LP-400
+lp400 → Pegassi Coutron LP-400
+доминантор → Dominator
+гт500 → GT500
+b740 → Ubermacht 740
+б740 → Ubermacht 740
+u740 → Ubermacht 740
+у740 → Ubermacht 740
+регина → Regina
+ремус → Remus
+руинер → Ruiner
+сталлион → Stallion
+йосемит → Yosemite
+w140 → Benefactor S-series 600 M140
+кабан → Benefactor S-series 600 M140
+м140 → Benefactor S-series 600 M140
+m140 → Benefactor S-series 600 M140
+е500 → Mercedes Benz E500
+е500 → Mercedes Benz E500
+с63 → Mercedes Benz C63
+c63 → Mercedes Benz C63
+м4 → Ubermacht M4
+m4 → Ubermacht M4
+190з → 190z
+блейд → Blade
+бриосо → Brioso 300
+букканир → Buccaneer
+каско → Casco
+читаха → Cheetah Classic
+чино → Chino
+клика → Clique
+корветблэк → Coquette BlackFin
+корветклас → Coquette Classic
+девиант → Deviant
+д1968 → Bravado Changer 1968
+d1968 → Bravado Changer 1968
+б1968 → Bravado Changer 1968
+b1968 → Bravado Changer 1968
+дюкес → Dukes
+династи → Dynasty
+элли → Ellie
+эмперор → Emperor
+шелби → Vapid Eleanor 1967
+shelby → Vapid Eleanor 1967
+eleonor → Vapid Eleanor 1967
+элеонор → Vapid Eleanor 1967
+eleanor → Vapid Eleanor 1967
+элеанор → Vapid Eleanor 1967
+факшион → Faction
+гаунтлет → Gauntlet
+глиндейл → Glendale
+гермес → Hermes
+хоткнайф → Hotknife
+хастлер → Hustler
+импалер → Impaler
+император → Imperator
+инфернус → Infernus 'SA
+исси → Issi
+жб700 → JB 700W
+небула → Nebula Turbo
+найтшейд → Nightshade
+пеут → Peyote
+феникс → Phoenix
+пикадор → Picador
+пигалль → Pigalle
+рэттрак → Rat-Truck
+ретиню → Retinue
+рхапсоду → Rhapsody
+русевельт → Roosevelt
+рт3000 → RT3000
+сабре → Sabre Turbo
+сламван → Slamvan
+стингер → Stinger
+стирлинг → Stirling GT
+серфер → Surfer
+тампа → Tampa
+торнадо → Tornado
+тюлип → Tulip
+вамос → Vamos
+вигеро → Vigero
+вирго → Virgo
+вуду → Voodoo заказной
+
+<p class='neon2-text'><i class="fas fa-car-alt"></i> Премиум транспорт</p>
+d10 → Coquette D10
+д10 → Coquette D10
+q50 → Fathom Q50
+к50 → Fathom Q50
+gs350 → Emperor GC350
+гс350 → Emperor GC350
+gc350 → Emperor GC350
+лконтин → Dundreary Kontinental
+lcontin → Dundreary Kontinental
+dkontin → Dundreary Kontinental
+дконтин → Dundreary Kontinental
+gtb → Itali GTB
+италигтб → Itali GTB
+gto → Itali GTO
+италигто → Itali GTO
+оцелот → Ocelot F620
+ocelot → Ocelot F620
+рапидгт → Rapid GT
+вакка → Vacca
+вектре → Vectre
+драфт → 8F Drafter
+альфа → Alpha
+8F → 8F Drafter
+аддер → Adder
+адер → Adder
+банши → Banshee
+бестиа → Bestia GTS
+бести → Bestia GTS
+буллет → Bullet
+карбонззар → Carbonizzare
+когносценти → Cognoscenti
+комет → Comet ST
+куклон → Cyclone
+циклон → Cyclone
+купер → Cypher
+эмерус → Emerus
+энтити → Entity XXR
+еурос → Euros
+фурия → Furia
+хонгки → Hongqi H9
+джестер → Jester
+хамелион → Khamelion
+кригер → Krieger
+массакро → Massacro
+неро → Nero
+осирис → Osiris
+парагон → Paragon R
+париах → Pariah
+перетрадор → Penetrator
+рипер → Reaper
+револьтер → Revolter
+шлаген → Schlagen GT
+севен → Seven-70
+спектр → Specter
+сурано → Surano
+тейлгейтер → Tailgater ST
+темпеста → Tempesta
+тигон → Tigon
+вольтик → Voltic
+виндсор → Windsor
+
+<p class='neon2-text'><i class="fas fa-car-side"></i> Комфорт транспорт</p>
+elegy → Elegy Retro
+элегия → Заказной Elegy Retro
+фелон → Felon
+райден → Raiden
+октавия → BF Octava
+октавиа → BF Octava
+octavia → BF Octava
+octava → BF Octava
+октава → BF Octava
+блиста → Blista Kanjo
+буффало → Buffalo
+эземпляр → Exemplar
+фельтзер → Feltzer
+фугитив → Fugitive
+фусилад → Fusilade
+джакал → Jackal
+комода → Komoda
+курума → Kuruma
+оракл → Oracle
+пенумбра → Penumbra
+шафтер → Schafter
+шварцзер → Schwartzer
+сентинель → Sentinel
+сугои → Sugoi
+султан → Sultan ST
+таилгатер → Tailgater
+vstr → V-STR
+зион → Zion
+
+<p class='neon2-text'><i class="fas fa-truck-moving"></i> Коммерческий транспорт</p>
+флатбет → Flatbed
+флатбед → Flatbed
+flatbed → Flatbed
+румпо → Bravado Rumpo Box
+rumpo → Bravado Rumpo Box
+мулн → Maibatsu Mule Neo
+муле → Maibatsu Mule
+янки → Vapid Yankee
+танкер → MTL Tanker
+спидб → Vapid Speedo Box
+паундер → MTL Pounder
+брикад → MTL Brickade
+бенсон → Vapid Benson
+
+ <p class='neonresiuroj-text'><i class="fas fa-coins"></i> Ресурсы</p>
+ продхлоп → Продам урожай "Хлопок" в количестве  штук.
+ продвиног → Продам урожай "Виноград" в количестве  штук.
+ продтыкв → Продам урожай "Тыква" в количестве  штук.
+ продморк → Продам урожай "Морковь" в количестве  штук.
+ продапел → Продам урожай "Апельсин" в количестве  штук.
+ продпшен → Продам урожай "Пшеница" в количестве  штук.
+ продкам → Продам ресурс "Камень" в количестве  штук.
+ проддерев → Продам ресурс "Древесина" в количестве  штук.
+ проддрев → Продам ресурс "Древесина" в количестве  штук.
+ проджелез → Продам ресурс "Железо" в количестве  штук.
+ продзол → Продам ресурс "Золото" в количестве  штук.
+ продсереб → Продам ресурс "Серебро" в количестве  штук.
+ продмедь → Продам ресурс "Медь" в количестве  штук.
+ продзслит → Продам ресурс "Золотой слиток" в количестве  штук.
+ продмслит → Продам ресурс "Медный слиток" в количестве  штук.
+ проджслит → Продам ресурс "Железный слиток" в количестве  штук.
+ продсслит → Продам ресурс "Серебряный слиток" в количестве  штук.
+ продстрос → Продам сладость "Сахарная трость" в количестве  штук.
+ проднефт → Продам ресурс "Нефть" в количестве  штук.
+ продполим → Продам ресурс "Полимер" в количестве  штук.
+ продаполплас → Продам ресурс "Армированная полимерная пластина" в количестве  штук.
+ продтльн → Продам ткань из льна в количестве  штук.
+ продтхлоп → Продам ткань из хлопка в количестве  штук.
+ продпльн → Продам пряжу из льна в количестве  штук.
+ продпхлоп → Продам пряжу из хлопка в количестве  штук.
+ 
+ купхлоп → Куплю урожай "Хлопок" в
+ купвиног → Куплю урожай "Виноград" в
+ куптыкв → Куплю урожай "Тыква" в
+ купморк → Куплю урожай "Морковь" в
+ купапел → Куплю урожай "Апельсин" в
+ куппшен → Куплю урожай "Пшеница" в
+ купкам → Куплю ресурс "Камень" в
+ купдерев → Куплю ресурс "Древесина" в
+ купдрев → Куплю ресурс "Древесина" в
+ купжелез → Куплю ресурс "Железо" в
+ купзол → Куплю ресурс "Золото" в
+ купсереб → Куплю ресурс "Серебро" в
+ купмедь → Куплю ресурс "Медь" в
+ купзслит → Куплю ресурс "Золотой слиток" в
+ купмслит → Куплю ресурс "Медный слиток" в
+ купжслит → Куплю ресурс "Железный слиток" в
+ купсслит → Куплю ресурс "Серебряный слиток" в
+ купстрос → Куплю сладость "Сахарная трость" в
+ купполим → Куплю ресурс "Полимер" в
+ купполплас → Куплю ресурс "Полимерная пластина" в
+ купаполплас → Куплю ресурс "Армированная полимерная пластина" в
+ купнефт → Куплю ресурс "Нефть" в
+ куппльн → Куплю пряжу из льна в
+ куппхлоп → Куплю пряжу из хлопка в
+ куптльн → Куплю ткань из льна в
+ куптхлоп → Куплю ткань из хлопка в
+
+ <p class='neonstoimosti-text'><i class="fas fa-money-bill-wave"></i> Стоимости</p>
+Русская раскладка:
+1т - 99.9т → 1.000$ - 99.900$
+1кк - 99.9кк → 1.000.000$ - 99.900.000$
+100м - 999.9м → 100.000.000$ - 999.900.000$
+
+Латинская раскладка:
+1t - 99.9t → 1.000$ - 99.900$
+1kk - 99.9kk → 1.000.000$ - 99.900.000$
+100m - 999.9m → 100.000.000$ - 999.900.000$
+
+
+своб → свободный
+догов → договорная
+cdj, → свободный
+догов → договорная
+ljujd → договорная
+
+бсво → Бюджет: свободный
+цдого → Цена: договорная
+цена → Цена:
+бюдж → Бюджет:
+
+<p class='neonintrumenti-text'><i class="fas fa-tools"></i> Инструменты</p>
+продрграб → Продам ржавые грабли.
+проджграб → Продам железные грабли.
+продмграб → Продам медные грабли.
+продсграб → Продам серебряные грабли.
+продзграб → Продам золотые грабли.
+продукир → Продам улучшенную кирку.
+продутоп → Продам улучшенный топор.
+продкир → Продам кирку.
+продтоп → Продам топор.
+
+купрграб → Куплю ржавые грабли.
+купжграб → Куплю железные грабли.
+купмграб → Куплю медные грабли.
+купсграб → Куплю серебряные грабли.
+купзграб → Куплю золотые грабли.
+купукир → Куплю улучшенную кирку.
+купутоп → Куплю улучшенный топор.
+купкир → Куплю кирку.
+куптоп → Куплю топор.
+
+<p class='neonodejda-text'><i class="fas fa-tshirt"></i> Одежда и бренды</p>
+<p class='neonmotiki-text'><i class="far fa-life-ring"></i> Бронежилеты</p>
+дединсайд → Deadinside
+бедвейв → Badwave
+бейп → Bape
+багсбанни → Bugs Bunny
+чцветхев → Черного цвета с макетом снайперской винтовки за спиной
+скатан → Красного цвета с катаной
+сдвумкатан → Розового цвета с двумя катанами
+
+<p class='neonmotiki-text'><i class="fas fa-stopwatch"></i> Часы</p>
+камо1 → G-SHOK Camo
+камо2 → G-SHOK Camo 2
+лвдрайв1 → LV Tambour Street Diver
+лвдрайв2 → LV Tambour Street Diver 2
+рич055 → Richard Mille 055
+рич7201 → Richard Mille 72-01
+ролдйтона → Rolex Cosmograph Daytona
+ролвголд1 → Rolex GMT-MASTER White Gold
+ролвголд2 → Rolex GMT-MASTER White Gold 2
+ролплат → Rolex Oyster Perpetual Cosmograph Crystal Platinum
+ролголд → Rolex Oyster Perpetual Cosmograph Gold
+ролбезел → Rolex Oyster Perpetual Cosmograph Rainbow Bezel
+ролрейв → Rolex Oyster Perpetual Cosmograph Rainbow Pave
+улисс → Ulysse Nardin Marine Diver
+
+<p class='neonmotiki-text'><i class="fas fa-copyright"></i> Бренды</p>
+фенди → Fendi
+гуччи → Gucci
+армани → Armani
+луивит → Louis Vuitton
+оффвайт → Off-White
+адидас → Adidas
+найк → Nike
+кензо → Kenzo
+полоральф → Polo Ralph Lauren
+суприм → Supreme
+томхефлиг → Tommy Hilfiger
+чемпион → Champion
+битсоло → Beats Solo
+джордан → Nike Air Jordan
+изики → Adidas Yeezy
+форсы → Nike Air Force
+ванс → Vans
+максы → Nike Air Max
+антисошл → Anti Social Social Club
+пальманг → Palm Angels
+аниме → Anime
+кензо → Kenzo
+баленсиага → Balenciaga
+плейн → Phillip Plein
+нортфейс → The North Face
+tnf → The North Face
+Тнф → The North Face
+аскл → Anti Social Club
+ascl → Anti Social Club
+антисошлклаб → Anti Social Club
+гивенши → Givenchy
+диор → Dior
+стоник → Stone Island
+пепе → Pepe
+йод → Йоды
+версаче → Versace
+самп → San-Andreas
+прада → Prada
+
+<p class='neonobmen-text'><i class="fas fa-map-pin"></i> Обмен</p>
+обменд → обменяю дом  на . Звоните
+обмена → обменяю автомобиль марки  на . Звоните
+обменм → обменяю мотоцикл марки  на . Звоните
+обменс → обменяю самолет марки  на . Звоните
+обменв → обменяю вертолет марки  на . Звоните
+обменл → обменяю лодку марки  на . Звоните
+
+<p class='neonribalka-text'><i class="fas fa-fish"></i> Рыбалка</p>
+продзуд → Продам золотую удочку.
+продууд → Продам улучшенную удочку.
+продсуд → Продам сверхновую удочку.
+продупоп → Продам снаряжение "Улучшенный поплавок".
+продспоп → Продам снаряжение "Сверхновый поплавок".
+продзпоп → Продам снаряжение "Золотой поплавок".
+продкрюч → Продам снаряжение "Крючок".
+продлеск → Продам снаряжение "Леска".
+купзуд → Куплю золотую удочку.
+купууд → Куплю улучшенную удочку.
+купсуд → Куплю сверхновую удочку.
+купупоп → Куплю снаряжение "Улучшенный поплавок".
+купспоп → Куплю снаряжение "Сверхновый поплавок".
+купзпоп → Куплю снаряжение "Золотой поплавок".
+купкрюч → Куплю снаряжение "Крючок".
+куплеск → Куплю снаряжение "Леска".
+
+<p class='neondiving-text'><i class="fas fa-vest-patches"></i> Дайвинг</p>
+<p class='neonmotiki-text'><i class="far fa-dot-circle fa-pulse"></i> Будет добавлено позже!</p>
+
+<p class='neontourobjets-text'><i class="fas fa-trash-alt"></i> Туристические объекты</p>
+<p class='neonmotiki-text'><i class="far fa-dot-circle fa-pulse"></i> Будет добавлено позже!</p>
+
+<p class='neongorodarayon-text'><i class="fas fa-city"></i> Города и районы</p>
+<p class='neonmotiki-text'><i class="far fa-building"></i> Города</p>
+лосс → г.Лос-Сантос
+прг → пределах города
+сенди → г.Сэнди-Шорс
+палето → г.Палето-Бэй
+kjcc → г.Лос-Сантос
+ctylb → г.Сэнди-Шорс
+gfktnj → г.Палето-Бэй
+
+<p class='neonmotiki-text'><i class="fas fa-home"></i> Районы</p>
+лш → любой точке штата
+гетто → опасном районе
+чг → черте города
+гетто → опасном районе
+alt → р.Альта
+альт → р.Альта
+вайнв → р.Вайнвуд-Хиллз
+vinev → р.Вайнвуд-Хиллз
+кайо → о.Кайо-Перико
+cayo → о.Кайо-Перико
+cvine → р.Центральный Вайнвуд
+цвайн → р.Центральный Вайнвуд
+zvine → р.Западный Вайнвуд
+звайн → р.Западный Вайнвуд
+vvine → р.Восточный Вайнвуд
+ввайн → р.Восточный Вайнвуд
+pdel → р.Пляж Дель-Перро
+пдель → р.Пляж Дель-Перро
+pvesp → р.Пляж Веспуччи
+пвесп → р.Пляж Веспуччи
+vesp → р.Веспуччи
+весп → р.Веспуччи
+grape → р.Грейпсид
+грейп → р.Грейпсид
+del → р.Дель-Перро
+дель → р.Дель-Перро
+лапуэрта → р.Ла-Пуэрта
+lapuerta → р.Ла-Пуэрта
+lamesa → р.Ла-Меса
+ламеса → р.Ла-Меса
+seul → р.Маленький Сеул
+сеул → р.Маленький Сеул
+mirror → р.Миррор-Парк
+миррор → р.Миррор-Парк
+pacific → р.Пасифик-Блаффс
+пасифик → р.Пасифик-Блаффс
+pillbox → р.Пиллбокс Хилл
+пилбокс → р.Пиллбокс Хилл
+richman → р.Ричман
+ричман → р.Ричман
+рокфорд → р.Рокфорд-Хиллз
+syres → р.Сайпрес-Флетс
+сайпрес → р.Сайпрес-Флетс
+hoik → р.Хоик
+хоик → р.Хоик
+chumash → р.Чумаш
+чумаш → р.Чумаш
+island → р.Элизиан-Айленд
+айленд → р.Элизиан-Айленд
+grand → р.Пустыня Гранд-Сенора
+гранд → р.Пустыня Гранд-Сенора
+d.alt → д.Альтруистов
+д.альт → д.Альтруистов
+саньш → р.Сан-Шаньский горный хребет
+тонгва → р.Тонгва-Хиллз
+галили → р.Галили
+аламо → р.Аламо-Си
+ричмэн → р.Ричмэн-Глен
+ранчо → р.Ранчо
+строберри → р.Строберри
+хавик → р.Хавик
+чемберлен → р.Чемберлен-Хиллз
+
+<p class='neonmotiki-text'><i class="fas fa-dungeon"></i> Подвалы</p>
+сподв → с обустроенным подвалом
+суподв → с улучшенным обустроенным подвалом
+
+<p class='neonmotiki-text'><i class="fas fa-parking"></i> Гаражные места</p>
+1гм → с 1 г.м.
+2гм → с 2 г.м.
+3гм → с 3 г.м.
+4гм → с 4 г.м.
+5гм → с 5 г.м.
+6гм → с 6 г.м.
+10гм → с 10 г.м.
+20гм → с 20 г.м.
+
+<p class='neonnedvijim-text'><i class="fas fa-university"></i> Недвижимость и бизнесы</p>
+купдом → Куплю дом в
+проддом → Продам дом в
+продсклад → Продам складское помещение №.
+купсклад → Куплю складское помещение
+продкгар → Продам коммерческий гараж №.
+купкгар → Куплю коммерческий гараж
+куппп → Куплю предприятие
+продпп → Продам предприятие
+купприст → Куплю место на пристани.
+продприст → Продам место на пристани.
+продпарк1 → Продам место в парковочном комплексе №1.
+продпарк2 → Продам место в парковочном комплексе №2.
+продпарк3 → Продам место в парковочном комплексе №3.
+продпарк4 → Продам место в парковочном комплексе №4.
+продпарк5 → Продам место в парковочном комплексе №5.
+продпарк6 → Продам место в парковочном комплексе №6.
+продпарк7 → Продам место в парковочном комплексе №7.
+продпарк8 → Продам место в парковочном комплексе №8.
+продпарк9 → Продам место в парковочном комплексе №9.
+куппарк1 → Куплю место в парковочном комплексе №1.
+куппарк2 → Куплю место в парковочном комплексе №2.
+куппарк3 → Куплю место в парковочном комплексе №3.
+куппарк4 → Куплю место в парковочном комплексе №4.
+куппарк5 → Куплю место в парковочном комплексе №5.
+куппарк6 → Куплю место в парковочном комплексе №6.
+куппарк7 → Куплю место в парковочном комплексе №7.
+куппарк8 → Куплю место в парковочном комплексе №8.
+куппарк9 → Куплю место в парковочном комплексе №9.
+куплтпарк → Куплю парковочное место в любой точке штата.
+куплпарк → Куплю парковочное место в
   </pre>
  </div>
 
@@ -849,14 +1586,62 @@ slivia → Annis Slivia S15
       limitirHeading.scrollIntoView({ behavior: "smooth" });
     }
 }
-    function scrollToOffroad() {
-    var limitirHeading = document.querySelector(".neonvnedor-text");
+    function scrollToresiuroj() {
+    var limitirHeading = document.querySelector(".neonresiuroj-text");
     if (limitirHeading) {
       limitirHeading.scrollIntoView({ behavior: "smooth" });
     }
   }
-  function scrollTomotiki() {
-    var limitirHeading = document.querySelector(".neonmotiki-text");
+    function scrollTostoimosti() {
+    var limitirHeading = document.querySelector(".neonstoimosti-text");
+    if (limitirHeading) {
+      limitirHeading.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+  function scrollTointrumenti() {
+    var limitirHeading = document.querySelector(".neonintrumenti-text");
+    if (limitirHeading) {
+      limitirHeading.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+  function scrollToodejda() {
+    var limitirHeading = document.querySelector(".neonodejda-text");
+    if (limitirHeading) {
+      limitirHeading.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+    function scrollToobmen() {
+    var limitirHeading = document.querySelector(".neonobmen-text");
+    if (limitirHeading) {
+      limitirHeading.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+  function scrollToribalka() {
+    var limitirHeading = document.querySelector(".neonribalka-text");
+    if (limitirHeading) {
+      limitirHeading.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+  function scrollTodiving() {
+    var limitirHeading = document.querySelector(".neondiving-text");
+    if (limitirHeading) {
+      limitirHeading.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+  function scrollTotourobjetsg() {
+    var limitirHeading = document.querySelector(".neontourobjets-text");
+    if (limitirHeading) {
+      limitirHeading.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+  function scrollTogorodarayon() {
+    var limitirHeading = document.querySelector(".neongorodarayon-text");
+    if (limitirHeading) {
+      limitirHeading.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+  function scrollTonedvijim() {
+    var limitirHeading = document.querySelector(".neonnedvijim-text");
     if (limitirHeading) {
       limitirHeading.scrollIntoView({ behavior: "smooth" });
     }
