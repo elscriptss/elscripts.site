@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Elvis Script's</title>
+  <title>elscripts</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="https://i.ibb.co/hgzJMtN/image.png">
@@ -380,6 +380,23 @@
       width: 155px;
       transition: transform 0.3s ease-in-out;
     }
+    .account4-btn {
+      position: absolute;
+      top: 20px;
+      right: 788px;
+      background-color: #29305a;
+      color: #FFFFFF;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      justify-content: center;
+      margin: 0px auto 0;
+      width: 155px;
+      transition: transform 0.3s ease-in-out;
+    }
     .product i {
       margin-right: 6px;
       width: 14px;
@@ -402,6 +419,12 @@
       margin-right: 10px;
     }
     .account3-btn:hover {
+      transform: scale(1.1);
+    }
+    .account4-btn i {
+      margin-right: 10px;
+    }
+    .account4-btn:hover {
       transform: scale(1.1);
     }
     .wnapp i {
@@ -463,6 +486,59 @@
       margin-top: 20px;
       transition: background-color 0.2s ease-in-out;
     }
+    .popup-messages {
+      display: none; /* Hide popup initially */
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #1F212E;
+      padding: 40px;
+      border-radius: 20px;
+      z-index: 9999;
+      color: #FFFFFF;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      opacity: 0; /* Set opacity to 0 */
+      transition: opacity 0.3s ease-in-out; /* Add animation */
+    }
+    .popup-messages p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .popup-messages h2 {
+      font-size: 24px;
+      gap: 30px;
+      margin: 0px auto 0;
+    }
+    .popup-messages img {
+      width: 100%;
+      object-fit: fill;
+      border-radius: 20px 20px 0 0;
+      display: block;
+      margin: 0 auto;
+      position: relative;
+      pointer-events: none;
+    }
+    .popup-messages .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      color: #FFFFFF;
+      cursor: pointer;
+    }
+    .popup-messages .link-btn {
+      display: inline-block;
+      background-color: #60A5FA;
+      color: #FFFFFF;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      margin-top: 20px;
+      transition: background-color 0.2s ease-in-out;
+    }
     .wnapp {
       display: inline-block;
       background-color: #a53333;
@@ -494,6 +570,10 @@
     .popup-message .link-btn:hover {
       background-color: #4B8BE8;
     }
+    .popup-messages .link-btn:hover {
+      background-color: #4B8BE8;
+    }
+
 
     .popup-message2 {
       display: none; /* Hide popup initially */
@@ -855,7 +935,7 @@
 <body>
   <div class="logo-container">
     <img class="logo" src="https://i.ibb.co/hgzJMtN/image.png" alt="Logo">
-    <span class="elvis-text">Elvis Script's</span>
+    <span class="elvis-text">elscripts</span>
   </div>
   <h3 class="main-title2">Наши продукты</h3>
   <div class="online-container">
@@ -876,6 +956,10 @@
   <a class="account3-btn" href="https://discord.gg/elvis-scripts-872567697186103356">
     <i class="fa-solid fa-headset"></i>
     Тех.поддержка
+  </a>
+  <a class="account4-btn" onclick="showPopups()">
+    <i class="fa-solid fa-certificate"></i>
+    Наш сертификат
   </a>
 
   <div class="container">
@@ -987,23 +1071,23 @@
 <h3 class="main-title">Новости проекта</h3>
 <div class="news-container">
   <div class="post">
-    <img src="https://media.discordapp.net/attachments/872569987565506600/1131730133842137168/image.png?width=1344&height=683" alt="Изображение поста 1">
+    <img src="https://i.ibb.co/smfjd5D/image.png" alt="Изображение поста 1">
     <div class="post-content">
-      <h3 class="post-title">А у нас уже новый сайт! А у вас?</h3>
+      <h3 class="post-title">Обновление ePad v.1.0.4.6</h3>
       <a class="read-button" href="https://discord.gg/elvis-scripts-872567697186103356">Читать</a>
     </div>
   </div>
   <div class="post">
-    <img src="https://media.discordapp.net/attachments/872569987565506600/1126613429956902923/image.png?width=1214&height=683" alt="Изображение поста 2">
+    <img src="https://i.ibb.co/zr3nj15/image.png" alt="Изображение поста 2">
     <div class="post-content">
-      <h3 class="post-title">Организационные задания в ePad 3.0?</h3>
-      <a class="read-button" href="https://discord.gg/elvis-scripts-872567697186103356">Читать</a>
+      <h3 class="post-title">Мы на Boosty!</h3>
+      <a class="read-button" href="https://boosty.to/elvis.scripts">Читать</a>
     </div>
   </div>
   <div class="post">
-    <img src="https://media.discordapp.net/attachments/872569987565506600/1123337960922824824/70a26a80df683ad8.png?width=1214&height=683" alt="Изображение поста 3">
+    <img src="https://i.ibb.co/smfjd5D/image.png" alt="Изображение поста 3">
     <div class="post-content">
-      <h3 class="post-title">Статистика ePad 3.0 за 24 часа!</h3>
+      <h3 class="post-title">Новый рекорд ePad!</h3>
       <a class="read-button" href="https://discord.gg/elvis-scripts-872567697186103356">Читать</a>
     </div>
   </div>
@@ -1021,6 +1105,18 @@
   </div>
 </div>
 </div>
+
+ <!-- Popup Message -->
+ <div class="popup-message" id="popups">
+  <span class="close-btn" onclick="hidePopups()">&times;</span>
+  <h2>Цифровой сертификат</h2>
+  <div style="position: relative;">
+  <p style="font-weight: semibold;">Мы сталкиваемся с ложными срабатываниями антивирусов, поэтому решением этой проблемы стал выпуск сертификата. Чтобы активировать сертификат необходимо нажать <span style="color: #4B8BE8;">ПКМ по нашему программному обеспечению - Свойства - Цифровые подписи.</span> Там будет единственный наш официальный сертификат, нажимаем по нему, затем нажимаем на кнопку <span style="color: #4B8BE8;">"Сведения" - "Просмотр сертификата" - "Установить сертификат" - "Текущий пользователь" - "Автоматически выбрать хранилище на основе типа сертификата" - "Готово".</span> Готово, приятного использования!</p>
+  <div>
+    <a href="https://ibb.co/rmjh7T3"><img src="https://i.ibb.co/R9FKvZN/image.png" alt="image" border="0"></a>
+</div>
+</div>
+
 
 
 <div class="popup-message3" id="popup3">
@@ -1129,6 +1225,12 @@ setInterval(() => {
         document.getElementById("popup").style.opacity = 1;
       }, 50); // Delay the animation to allow popup to show first
     }
+    function showPopups() {
+      document.getElementById("popups").style.display = "block";
+      setTimeout(function () {
+        document.getElementById("popups").style.opacity = 1;
+      }, 50); // Delay the animation to allow popup to show first
+    }
     function showPopupdonate() {
       document.getElementById("popupd").style.display = "block";
       setTimeout(function () {
@@ -1189,6 +1291,13 @@ setInterval(() => {
       document.getElementById("popup").style.opacity = 0; // Hide popup with opacity
       setTimeout(function () {
         document.getElementById("popup").style.display = "none"; // Hide popup after animation
+      }, 300);
+    }
+
+    function hidePopups() {
+      document.getElementById("popups").style.opacity = 0; // Hide popup with opacity
+      setTimeout(function () {
+        document.getElementById("popups").style.display = "none"; // Hide popup after animation
       }, 300);
     }
 
@@ -1323,7 +1432,7 @@ function hidePopupNotification1(notification) {
       <a href="https://discord.gg/elvis-scripts-872567697186103356">Пользовательское соглашение</a>
     </p>
     <p>
-      (c) Elvis Script's
+      (c) elscripts 2023
     </p>
     <a href="https://t.me/elvis_scripts"><img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/512px-Telegram_logo.svg.png" alt="Icon 2" style="width: 25px; height: 25px;"></a>
     <a href="https://vk.com/elvis_scripts"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/3938/3938067.png" alt="Icon 2" style="width: 25px; height: 25px;"></a>
